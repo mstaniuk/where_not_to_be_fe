@@ -1,5 +1,5 @@
 <template>
-  <Map :poi="poi"/>
+  <Map :poi="poi" />
 </template>
 
 <script>

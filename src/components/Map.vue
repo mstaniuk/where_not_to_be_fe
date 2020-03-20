@@ -1,8 +1,18 @@
 <template>
   <div class="map">
-    <LMap :zoom="zoom" :center="center">
-      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <l-marker v-for="point in poi" :key="point.latLng.toString()" :lat-lng="point.latLng"></l-marker>
+    <LMap
+      :zoom="zoom"
+      :center="center"
+    >
+      <l-tile-layer
+        :url="url"
+        :attribution="attribution"
+      />
+      <l-marker
+        v-for="point in poi"
+        :key="point.latLng.toString()"
+        :lat-lng="point.latLng"
+      />
     </LMap>
   </div>
 </template>
@@ -16,7 +26,12 @@
   } from 'vue2-leaflet';
 
   export default {
-    props: ['poi'],
+    props: {
+      poi: {
+        type: Array,
+        default: () => []
+      }
+    },
     components: {
       LMap, LTileLayer, LMarker
     },

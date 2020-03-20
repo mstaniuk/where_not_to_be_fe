@@ -1,34 +1,34 @@
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+  
+.app__main {
+  @include media-query-lg-up {
+    flex: 1 1 100%;
+  }
+}
+  
+.app__side {
+  position: fixed;
+  left: -$sidebar-width;
+  background-color: $color-navy;
+  height: calc(100vh - $topbar-height);
+  
+  &--visible {
+    left: 0;
   }
   
-  .app {
-    position: relative;
-    width: 100vw;
+  @include media-query-lg-up {
+    flex: 0 0 $sidebar-width;
     height: 100vh;
-    display: flex;
   }
-  
-  .app__main {
-    @include media-query-lg-up {
-      flex: 1 1 100%;
-    }
-  }
-  
-  .app__side {
-    position: fixed;
-    left: -$sidebar-width;
-    background-color: $color-navy;
-    height: calc(100vh - $topbar-height);
-  
-    &--visible {
-      left: 0;
-    }
-  
-    @include media-query-lg-up {
-      flex: 0 0 $sidebar-width;
-      height: 100vh;
-    }
-  }
+}
