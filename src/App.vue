@@ -21,23 +21,21 @@
       </TopBar>
       <router-view />
     </main>
-    <nav class="app__bottom">
-      <Bottom />
-    </nav>
+    <MainMenu />
   </div>
 </template>
 
 <script>
 import Side from "@/components/Side.vue";
-import Bottom from "@/components/Bottom.vue";
 import TopBar from "@/components/TopBar.vue";
+import MainMenu from "@/components/MainMenu.vue";
 
 export default {
   name: "App",
 
   components: {
     Side,
-    Bottom,
+    MainMenu,
     TopBar
   },
 

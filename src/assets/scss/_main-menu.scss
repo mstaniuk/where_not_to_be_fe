@@ -1,0 +1,183 @@
+@mixin indicatorAnimation($name, $time) {
+  animation-name: #{$name};
+  animation-duration: $time;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.main-menu {
+  position: fixed;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  background-color: $color-white;
+  width: 260px;
+  padding: 0 12px 8px;
+  z-index: 2000;
+  @include dark-shadow;
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item {
+    height: 50px;
+    padding: 8px 10px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      opacity: .5;
+    }
+    
+    a:hover {
+      opacity: 1;
+
+      i,
+      span {
+        color: $color-navy;
+      }
+    }
+
+    i {
+      font-size: 50px;
+      color: $color-black;
+      line-height: 50px;
+    }
+
+    &--active {
+      a {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__active-indicator {
+    @include circle-shaped(24px);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: $color-salmon;
+    @include indicatorAnimation(firstCircle, .3s);
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      background-color: rgba($color-salmon, .2);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      @include circle-shaped(44px);
+      @include indicatorAnimation(secondCircle, .32s);
+    }
+
+    &::after {
+      @include circle-shaped(64px);
+      @include indicatorAnimation(thirdCircle, .34s);
+    }
+  }
+
+  @include media-query-lg-up {
+    width: 540px;
+    padding: 0 15px 10px;
+  
+    &__item {
+      height: 70px;
+      min-width: 150px;
+      padding: 10px 15px;
+      position: relative;
+  
+      i {
+        font-size: 70px;
+        color: $color-black;
+        line-height: 80px;
+      }
+  
+      span {
+        font-size: 10px;
+        color: $color-black;
+        line-height: 14px;
+        margin-left: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  
+    &__active-indicator {
+      @include circle-shaped(24px);
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      background-color: $color-salmon;
+      @include indicatorAnimation(firstCircle, .3s);
+  
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        background-color: rgba($color-salmon, .2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+  
+      &::before {
+        @include circle-shaped(44px);
+        @include indicatorAnimation(secondCircle, .32s);
+      }
+  
+      &::after {
+        @include circle-shaped(64px);
+        @include indicatorAnimation(thirdCircle, .34s);
+      }
+    }
+  }
+}
+
+@keyframes firstCircle {
+  from {
+    width: 0;
+    height: 0;
+  }
+  
+  to {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@keyframes secondCircle {
+  from {
+    width: 0;
+    height: 0;
+  }
+    
+  to {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@keyframes thirdCircle {
+  from {
+    width: 0;
+    height: 0;
+  }
+      
+  to {
+    width: 64px;
+    height: 64px;
+  }
+}

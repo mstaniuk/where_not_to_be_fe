@@ -1,0 +1,43 @@
+@mixin arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+  
+@mixin circle-shaped ($size: 30px) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+  
+@mixin dark-shadow ($x: 0, $y: 8px) {
+  box-shadow: #{$x} #{$y} 17px 0 rgba($color-black, .15);
+}
+  
+@mixin arrow-down($color) {
+  &::before {
+    @include arrow;
+    content: "";
+    border-top: 5px solid $color;
+  }
+}
+  
+@mixin arrow-up($color) {
+  &::before {
+    @include arrow;
+    content: "";
+    border-bottom: 5px solid $color;
+  }
+}
+  
+@mixin bg-image($path) {
+  background-color: $color-navy;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(#{$path});
+}
