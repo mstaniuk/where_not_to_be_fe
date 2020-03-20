@@ -3,6 +3,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+div {
+  box-sizing: border-box;
+}
   
 .app {
   position: relative;
@@ -19,16 +23,47 @@
   
 .app__side {
   position: fixed;
-  left: -$sidebar-width;
+  left: 0;
   background-color: $color-navy;
-  height: calc(100vh - $topbar-height);
+  height: calc(100vh - #{$topbar-height});
+  top: $topbar-height;
+  width: $sidebar-width;
+  transform: translateX(-$sidebar-width);
+  z-index: 1000;
+  animation-name: hidemenu;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   
   &--visible {
-    left: 0;
+    animation-name: showmenu;
+    animation-timing-function: ease-in;
   }
   
   @include media-query-lg-up {
     flex: 0 0 $sidebar-width;
     height: 100vh;
+    top: 0;
+  }
+}
+
+@keyframes showmenu {
+  from {
+    transform: translateX(-$sidebar-width);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hidemenu {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-$sidebar-width);
   }
 }

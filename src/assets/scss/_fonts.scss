@@ -1,10 +1,25 @@
 @font-face {
+  font-family: 'brygada';
+  src: url('~@/assets/fonts/brygada/Brygada1918-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.brygada {
+  font-family: 'brygada', serif;
+}
+
+@font-face {
   font-family: 'icomoon';
   src: url('~@/assets/fonts/iconfont/icomoon.eot?h6dn59');
-  src: url('~@/assets/fonts/iconfont/icomoon.eot?h6dn59#iefix') format('embedded-opentype'),
-  url('~@/assets/fonts/iconfont/icomoon.ttf?h6dn59') format('truetype'),
-  url('~@/assets/fonts/iconfont/icomoon.woff?h6dn59') format('woff'),
-  url('~@/assets/fonts/iconfont/icomoon.svg?h6dn59#icomoon') format('svg');
+  src: url('~@/assets/fonts/iconfont/icomoon.eot?h6dn59#iefix')
+  format('embedded-opentype'),
+  url('~@/assets/fonts/iconfont/icomoon.ttf?h6dn59')
+  format('truetype'),
+  url('~@/assets/fonts/iconfont/icomoon.woff?h6dn59')
+  format('woff'),
+  url('~@/assets/fonts/iconfont/icomoon.svg?h6dn59#icomoon')
+  format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,8 +27,6 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
-
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -21,8 +34,6 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
