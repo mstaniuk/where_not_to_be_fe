@@ -4,6 +4,7 @@
       <Side />
     </aside>
     <main class="app__main">
+      <TopBar />
       <router-view />
     </main>
     <nav class="app__bottom">
@@ -15,12 +16,14 @@
 <script>
 import Side from '@/components/Side.vue'
 import Bottom from '@/components/Bottom.vue'
+import TopBar from '@/components/TopBar.vue';
 
 export default {
   name: 'App',
   components: {
     Side,
-    Bottom
+    Bottom,
+    TopBar
   }
 }
 </script>

@@ -1,11 +1,15 @@
 @import '~reset-css';
+
 @import 'media-queries';
+@import 'icon-font';
 
 
 $color-white: #fff;
 $color-navy: #302B5C;
 
-$topbar-height: 84px;
+$topbar-height: 4rem;
+$menu-btn-size: 3rem;
+$sidebar-width: 300px;
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -20,14 +24,22 @@ $topbar-height: 84px;
   display: flex;
 }
 .app__main {
-  flex: 1 1 100%;
+  @include media-query-lg-up {
+    flex: 1 1 100%;
+  }
 }
 .app__side {
-  flex: 0 0 300px;
+  position: fixed;
+  left: -$sidebar-width;
   background-color: $color-navy;
   height: calc(100vh - $topbar-height);
 
+  &--visible {
+    left: 0;
+  }
+
   @include media-query-lg-up {
+    flex: 0 0 $sidebar-width;
     height: 100vh;
   }
 }
