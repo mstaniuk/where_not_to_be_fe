@@ -46,7 +46,6 @@ export default {
       menuExpanded: false
     };
   },
-
   watch: {
     isMobile() {
       this.menuExpanded = !this.isMobile;
