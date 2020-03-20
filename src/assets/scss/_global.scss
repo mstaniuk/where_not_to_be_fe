@@ -1,0 +1,20 @@
+#app {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  
+div {
+  box-sizing: border-box;
+}
+
+a {
+  transition: .2s ease-in;
+}
+    
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}

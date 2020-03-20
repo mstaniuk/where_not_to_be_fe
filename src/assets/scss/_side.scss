@@ -1,14 +1,112 @@
 .side {
   background-color: $color-navy;
+  padding: 0 25px;
+  text-align: center;
+  color: $color-white;
+}
+
+.app-logo {
+  display: block;
+  margin: 30px auto;
+
+  img {
+    display: inline;
+  }
 }
 
 .user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+
   &__name {
-    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    text-align: left;
+
+    strong {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
   }
   
   &__avatar {
     width: 60px;
     height: 60px;
+    margin-right: 10px;
+    display: block;
+    border-radius: 50%;
+    background-color: $color-white;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.side-menu {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+  }
+
+  &__item {
+    line-height: 40px;
+    width: 50%;
+    border-top: 1px solid $color-lightblue;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    &:nth-of-type(2n + 1)::before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background-color: $color-lightblue;
+    }
+
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      border-bottom: 1px solid $color-lightblue;
+    }
+
+    &:last-of-type {
+      a {
+        color: $color-lightblue;
+      }
+    }
+
+    a:hover {
+      color: $color-salmon;
+    }
+  }
+}
+
+.jcvd {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+
+  &__heading {
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin: 10px 0 10px;;
+  }
+  
+  &__image {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 25px 0;
   }
 }

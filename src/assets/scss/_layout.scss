@@ -1,23 +1,10 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-div {
-  box-sizing: border-box;
-}
-  
-.app {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-}
-  
 .app__main {
+  padding: 30px;
+  padding-top: 30px + $topbar-height;
+
   @include media-query-lg-up {
     flex: 1 1 100%;
+    padding-top: 30px;
   }
 }
   
