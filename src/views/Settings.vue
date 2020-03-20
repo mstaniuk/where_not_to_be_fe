@@ -1,9 +1,19 @@
 <template>
-  <h1>Settings</h1>
+  <section id="settings" class="page">
+    <PageHead>
+      <template v-slot:title>
+        Settings
+      </template>
+    </PageHead>
+  </section>
 </template>
 
 <script>
+import PageHead from "@/components/PageHead.vue";
+
 export default {
-  name: "Settings"
+  name: "Settings",
+
+  components: { PageHead }
 };
 </script>
