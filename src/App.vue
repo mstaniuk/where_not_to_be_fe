@@ -1,14 +1,14 @@
 <template>
   <div id="app" class="app">
-    <div class="app__side">
+    <aside class="app__side">
       <Side />
-    </div>
-    <div class="app__map">
+    </aside>
+    <main class="app__main">
       <Map :poi="poi"/>
-    </div>
-    <div class="app__bottom">
+    </main>
+    <nav class="app__bottom">
       <Bottom />
-    </div>
+    </nav>
   </div>
 </template>
 
@@ -66,7 +66,7 @@ export default {
   height: 100vh;
   display: flex;
 }
-.app__map {
+.app__main {
   flex: 1 1 100%;
 }
 .app__side {
