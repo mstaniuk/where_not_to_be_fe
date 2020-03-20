@@ -1,6 +1,6 @@
 <template>
   <div class="top-bar">
-    <div class="top-bar__left">
+    <div class="top-bar__left brygada">
       <div class="top-bar__menu-btn" @click="showMenu = !showMenu">
         <i v-if="!showMenu" class="icon icon-hamburger" />
         <i v-else class="icon icon-hamburger" />
