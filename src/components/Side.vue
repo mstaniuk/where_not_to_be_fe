@@ -1,5 +1,8 @@
 <template>
   <div class="side">
+    <div class="app-logo">
+      <img :src="AppLogo" alt="Avoidly application logo" />
+    </div>
     <div class="user">
       <picture
         class="user__avatar"
@@ -16,12 +19,14 @@
 
 <script>
 import avatarFallback from "@/assets/images/avatar.png";
+import AppLogo from "@/assets/images/AppLogo.svg";
 
 export default {
   name: "Side",
 
   data() {
     return {
+      AppLogo,
       user: {
         firstname: "Grzegorz",
         lastname: "Brzęczyszczykiewicz",

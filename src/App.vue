@@ -1,10 +1,15 @@
 <template>
   <div id="app" class="app">
-    <aside class="app__side">
+    <aside
+      :class="{
+        app__side: true,
+        'app__side--visible': menuExpanded
+      }"
+    >
       <Side />
     </aside>
     <main class="app__main">
-      <TopBar v-model="menuExpanded" />
+      <TopBar v-if="isMobile" v-model="menuExpanded" />
       <router-view />
     </main>
     <nav class="app__bottom">
@@ -31,6 +36,12 @@ export default {
     return {
       menuExpanded: false
     };
+  },
+
+  watch: {
+    isMobile() {
+      this.menuExpanded = !this.isMobile;
+    }
   }
 };
 </script>
