@@ -26,31 +26,23 @@ export default {
         lat: 50.049679,
         lng: 19.947022,
       },
-      poi: [
-        {
-          "name": "Bazylika bozego ciała w krakowie",
-          "loc": [
-            {
-              "lat": 50.049697,
-              "lng": 19.944797
-            },
-          ],
-          latLng: L.latLng(50.049697,19.944797),
-          "density": 32
-        },
-        {
-          "name": "Cafe Kladka",
-          "loc": [
-            {
-              "lat": 50.047635,
-              "lng": 19.946605
-            }
-          ],
-          latLng: L.latLng(50.047635,19.946605),
-          "density": 32
-        },
-      ]
+      poi: []
     };
+  },
+  async mounted() {
+    try {
+      const response = await this.$api.getPoiByMapCenter(this.user);
+      return response.data.map(r => {
+        const latLng = L.latLng(r.loc[0].lat, r.loc[0].lng);
+        return {
+          ...r,
+          latLng,
+        }
+      })
+    } catch (e) {
+      console.log(e);
+    }
+
   },
   components: {
     Map,
@@ -60,8 +52,8 @@ export default {
 }
 </script>
 
-<style>
-  @import '~reset-css';
+<style lang="scss">
+@import '~reset-css';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -14,7 +14,7 @@ Icon.Default.mergeOptions({
 Vue.config.productionTip = false;
 
 const httpClient = httpClientFactory();
-const apiService = apiServiceFactory(httpClient, {baseUrl: 'localhost:30001'});
+const apiService = apiServiceFactory(httpClient, {baseUrl: 'http://avoidly-api.herokuapp.com'});
 
 Vue.prototype.$api = apiService;
 
