@@ -15,6 +15,16 @@
         <strong>{{ user.lastname }}</strong>
       </div>
     </div>
+
+    <nav class="side-menu">
+      <ul class="side-menu__list">
+        <li v-for="item in menu" :key="item.path" class="side-menu__item">
+          <router-link :to="{ path: item.path }">
+            {{ item.label }}
+          </router-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -32,7 +42,13 @@ export default {
         firstname: "Grzegorz",
         lastname: "Brzęczyszczykiewicz",
         avatar: null
-      }
+      },
+      menu: [
+        { path: "/notifications", label: "Notifications" },
+        { path: "/statistics", label: "Statistics" },
+        { path: "/settings", label: "Settings" },
+        { path: "/logout", label: "Logout" }
+      ]
     };
   },
 

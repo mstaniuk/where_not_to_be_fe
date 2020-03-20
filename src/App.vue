@@ -9,7 +9,16 @@
       <Side />
     </aside>
     <main class="app__main">
-      <TopBar v-if="isMobile" v-model="menuExpanded" />
+      <TopBar v-if="isMobile">
+        <div
+          v-if="isMobile"
+          class="top-bar__menu-btn"
+          @click="menuExpanded = !menuExpanded"
+        >
+          <i v-if="!menuExpanded" class="icon icon-hamburger" />
+          <i v-else class="icon icon-close" />
+        </div>
+      </TopBar>
       <router-view />
     </main>
     <nav class="app__bottom">
@@ -41,6 +50,10 @@ export default {
   watch: {
     isMobile() {
       this.menuExpanded = !this.isMobile;
+    },
+
+    $route() {
+      this.menuExpanded = false;
     }
   }
 };

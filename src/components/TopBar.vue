@@ -1,14 +1,7 @@
 <template>
   <div class="top-bar">
     <div class="top-bar__left brygada">
-      <div
-        v-if="isMobile"
-        class="top-bar__menu-btn"
-        @click="showMenu = !showMenu"
-      >
-        <i v-if="!showMenu" class="icon icon-hamburger" />
-        <i v-else class="icon icon-close" />
-      </div>
+      <slot />
     </div>
     <div class="top-bar__center">
       <img :src="AppLogo" alt="Avoidly application logo" />
@@ -25,15 +18,8 @@ export default {
 
   data() {
     return {
-      AppLogo,
-      showMenu: false
+      AppLogo
     };
-  },
-
-  watch: {
-    showMenu() {
-      this.$emit("input", this.showMenu);
-    }
   }
 };
 </script>

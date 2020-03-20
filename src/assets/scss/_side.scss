@@ -2,6 +2,47 @@
   background-color: $color-navy;
 }
 
+.side-menu {
+  padding: 25px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    line-height: 40px;
+    width: 50%;
+    text-align: center;
+    border-top: 1px solid $color-lightblue;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    &:nth-of-type(2n + 1)::before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background-color: $color-lightblue;
+    }
+
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      border-bottom: 1px solid $color-lightblue;
+    }
+  }
+}
+
 .app-logo {
   display: block;
   margin: 30px auto;
