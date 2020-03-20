@@ -69,11 +69,9 @@ export default {
         });
 
         this.poi = [
-          ...this.poi.filter(
-            p => newPoi.findIndex(np => np.name === p.name) < 0
-          ),
-          ...newPoi
-        ];
+          ...this.poi,
+          ...newPoi.filter(np => this.poi.findIndex(p => np.name === p.name) < 0)
+        ]
       } catch (e) {
         console.log(e);
       }
