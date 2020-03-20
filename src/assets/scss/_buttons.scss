@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 36px;
+  height: 36px;
+  border-radius: 18px;
+  padding: 0 18px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+  transition: .2s ease-in;
+
+  &--white {
+    color: white;
+  }
+
+  &--contour {
+    box-shadow: 0 0 0 2px $color-white;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-navy;
+    }
+  }
+
+  &--fullwidth {
+    width: 100%;
+  }
+}

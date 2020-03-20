@@ -25,12 +25,30 @@
         </li>
       </ul>
     </nav>
+
+    <a class="btn btn--contour btn--white btn--fullwidth" href="#">
+      AD SCORE: <strong>{{ adScore }}</strong>
+    </a>
+
+    <div class="jcvd">
+      <span class="jcvd__heading">ADVERT</span>
+
+      <a href="#" title="">
+        <img
+          class="jcvd__image"
+          :src="AdvertImage"
+          alt="Jean-Claude Van Damme Image With Jean-Claude hanging stretched between two trucks"
+          title="Jean-Claude Van Damme"
+        />
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
 import avatarFallback from "@/assets/images/avatar.png";
 import AppLogo from "@/assets/images/AppLogo.svg";
+import AdvertImage from "@/assets/images/jcvd.png";
 
 export default {
   name: "Side",
@@ -38,6 +56,7 @@ export default {
   data() {
     return {
       AppLogo,
+      AdvertImage,
       user: {
         firstname: "Grzegorz",
         lastname: "Brzęczyszczykiewicz",
@@ -48,7 +67,8 @@ export default {
         { path: "/statistics", label: "Statistics" },
         { path: "/settings", label: "Settings" },
         { path: "/logout", label: "Logout" }
-      ]
+      ],
+      adScore: 10284
     };
   },
 
