@@ -4,6 +4,7 @@ import { Icon } from "leaflet";
 import httpClientFactory from "./utils/httpClientFactory";
 import apiServiceFactory from "./utils/apiServiceFactory";
 import router from "./router";
+import viewportMixin from "@/utils/viewportMixin";
 import "@/assets/scss/styles.scss";
 
 delete Icon.Default.prototype._getIconUrl;
@@ -20,6 +21,7 @@ const apiService = apiServiceFactory(httpClient, {
   baseUrl: "http://avoidly-api.herokuapp.com"
 });
 
+Vue.mixin(viewportMixin);
 Vue.prototype.$api = apiService;
 
 new Vue({
