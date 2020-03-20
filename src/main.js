@@ -3,6 +3,8 @@ import App from './App.vue'
 import {Icon} from 'leaflet';
 import httpClientFactory from './utils/httpClientFactory';
 import apiServiceFactory from './utils/apiServiceFactory';
+import router from './router'
+import "./assets/styles.scss";
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
@@ -19,5 +21,6 @@ const apiService = apiServiceFactory(httpClient, {baseUrl: 'http://avoidly-api.h
 Vue.prototype.$api = apiService;
 
 new Vue({
-  render: h => h(App),
+  router,
+  render: h => h(App)
 }).$mount('#app')
