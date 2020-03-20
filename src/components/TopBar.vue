@@ -1,8 +1,8 @@
 <template>
     <div class="top-bar">
         <div class="top-bar__left">
-            <div class="top-bar__menu-btn" @click="menuExpanded = !menuExpanded">
-                <i v-if="!menuExpanded" class="icon icon-hamburger" />
+            <div class="top-bar__menu-btn" @click="showMenu = !showMenu">
+                <i v-if="!showMenu" class="icon icon-hamburger" />
                 <i v-else class="icon icon-hamburger" />
             </div>
         </div>
@@ -22,7 +22,13 @@ export default {
     data() {
         return {
             AppLogo,
-            menuExpanded: false 
+            showMenu: false 
+        }
+    },
+
+    watch: {
+        showMenu() {
+            this.$emit("input", this.showMenu);
         }
     }
 }
