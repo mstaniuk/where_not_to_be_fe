@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import Advertising from "@/views/Advertising";
 import CrowdedPlaces from "@/views/CrowdedPlaces";
 import OfficialInformation from "@/views/OfficialInformation";
 import WaysToHelp from "@/views/WaysToHelp";
@@ -13,6 +14,7 @@ import Logout from "@/views/Logout";
 Vue.use(VueRouter);
 
 const routes = [
+  // Main views
   {
     path: "/",
     name: "Home",
@@ -28,6 +30,12 @@ const routes = [
     name: "Ways to help",
     component: WaysToHelp
   },
+  {
+    path: "/advertising",
+    name: "Advertising",
+    component: Advertising
+  },
+  // User views
   {
     path: "/notifications",
     name: "Notifications",

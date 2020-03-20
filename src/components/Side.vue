@@ -28,9 +28,12 @@
       </ul>
     </nav>
 
-    <a class="btn btn--contour btn--white btn--fullwidth" href="#">
+    <router-link
+      :to="{ path: '/advertising' }"
+      class="btn btn--contour btn--white btn--fullwidth"
+    >
       AD SCORE: <strong>{{ adScore }}</strong>
-    </a>
+    </router-link>
 
     <div class="jcvd">
       <span class="jcvd__heading">ADVERT</span>
