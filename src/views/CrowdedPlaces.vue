@@ -1,15 +1,16 @@
 <template>
-  <section class="places">
-    <header class="places__header">
-      <h1 class="places__title brygada">
+  <section id="crowded-places" class="page places">
+    <PageHead>
+      <template v-slot:title>
         Crowded places
-      </h1>
-
-      <div class="places__description">
-        Here is the map with some density indicators which should help you <br />
-        to avoid crowdy places. It's really important - <a>read why</a>
-      </div>
-    </header>
+      </template>
+      <template v-slot:text>
+        Here is the map with some density indicators which should help you
+        <br />
+        to avoid crowdy places. It's really important -
+        <a href="#">read why</a>
+      </template>
+    </PageHead>
     <div class="places__actions">
       <div class="places__action">
         <!--          <Search />-->
@@ -22,18 +23,19 @@
     </div>
 
     <div class="places__content">
-      <Map :poi="poi" :position="position" @moved="onMovedHandler"/>
+      <Map :poi="poi" :position="position" @moved="onMovedHandler" />
     </div>
   </section>
 </template>
 
 <script>
 import Map from "@/components/Map.vue";
+import PageHead from "@/components/PageHead.vue";
 import L from "leaflet";
 
 export default {
   name: "Home",
-  components: { Map },
+  components: { Map, PageHead },
   data() {
     return {
       position: {
@@ -42,6 +44,14 @@ export default {
       },
       poi: []
     };
+  },
+  watch: {
+    position() {
+      this.getPoiByPosition();
+    }
+  },
+  async mounted() {
+    this.getPoiByPosition();
   },
   methods: {
     onMovedHandler(ev) {
@@ -59,61 +69,55 @@ export default {
         });
 
         this.poi = [
-          ...this.poi.filter(p => newPoi.findIndex(np => np.name === p.name) < 0),
+          ...this.poi.filter(
+            p => newPoi.findIndex(np => np.name === p.name) < 0
+          ),
           ...newPoi
-        ]
+        ];
       } catch (e) {
         console.log(e);
       }
     }
-  },
-  watch: {
-    position() {
-      this.getPoiByPosition();
-    }
-  },
-  async mounted() {
-    this.getPoiByPosition();
   }
 };
 </script>
 
 <style lang="scss">
-  .places {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.places {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
-    &__header {
-      background-color: #ffffff;
-      padding: 40px;
-      color: #302b5c;
-      flex: 0 0 auto;
-    }
+  &__header {
+    background-color: #ffffff;
+    padding: 40px;
+    color: #302b5c;
+    flex: 0 0 auto;
+  }
 
-    &__title {
-      font-size: 40px;
-    }
+  &__title {
+    font-size: 40px;
+  }
 
-    &__description {
-      a {
-        font-weight: bold;
-        text-decoration: underline;
-      }
-    }
-    &__actions {
-      flex: 0 0 auto;
-      padding: 12px;
-      display: flex;
-      background-color: #e8e8e8;
-    }
-    &__action {
-      & + & {
-        margin-left: 24px;
-      }
-    }
-    &__content {
-      flex: 1 1 100%;
+  &__description {
+    a {
+      font-weight: bold;
+      text-decoration: underline;
     }
   }
+  &__actions {
+    flex: 0 0 auto;
+    padding: 12px;
+    display: flex;
+    background-color: #e8e8e8;
+  }
+  &__action {
+    & + & {
+      margin-left: 24px;
+    }
+  }
+  &__content {
+    flex: 1 1 100%;
+  }
+}
 </style>

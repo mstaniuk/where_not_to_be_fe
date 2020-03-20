@@ -11,6 +11,32 @@ div {
 a {
   transition: .2s ease-in;
 }
+
+@mixin arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin arrow-down($color) {
+  &::before {
+    @include arrow;
+    content: "";
+    border-top: 5px solid $color;
+  }
+}
+
+@mixin arrow-up($color) {
+  &::before {
+    @include arrow;
+    content: "";
+    border-bottom: 5px solid $color;
+  }
+}
     
 .app {
   position: relative;
