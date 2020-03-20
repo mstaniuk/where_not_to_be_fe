@@ -4,6 +4,7 @@
       <Side />
     </aside>
     <main class="app__main">
+      <TopBar v-model="menuExpanded" />
       <router-view />
     </main>
     <nav class="app__bottom">
@@ -13,14 +14,23 @@
 </template>
 
 <script>
-import Side from '@/components/Side.vue'
-import Bottom from '@/components/Bottom.vue'
+import Side from "@/components/Side.vue";
+import Bottom from "@/components/Bottom.vue";
+import TopBar from "@/components/TopBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
     Side,
-    Bottom
+    Bottom,
+    TopBar
+  },
+
+  data() {
+    return {
+      menuExpanded: false
+    };
   }
-}
+};
 </script>

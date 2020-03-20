@@ -1,0 +1,41 @@
+@mixin media-query-sm-up {
+  @media only screen and (min-width: 48em) {
+    @content
+  }
+}
+  
+@mixin media-query-md-up {
+  @media only screen and (min-width: 64em) {
+    @content
+  }
+}
+  
+@mixin media-query-lg-up {
+  @media only screen and (min-width: 75em) {
+    @content
+  }
+}
+  
+@mixin media-query-xs-only {
+  @media only screen and (max-width: 47.999em) {
+    @content
+  }
+}
+  
+@mixin media-query-sm-only {
+  @media only screen and (min-width: 48em) and (max-width: 63.999em) {
+    @content
+  }
+}
+  
+@mixin media-query-md-only {
+  @media only screen and (min-width: 64em) and (max-width: 75.999em) {
+    @content
+  }
+}
+  
+@mixin media-query-lg-only {
+  @media only screen and (min-width: 75em) {
+    @content
+  }
+}
