@@ -4,7 +4,6 @@ import {Icon} from 'leaflet';
 import httpClientFactory from './utils/httpClientFactory';
 import apiServiceFactory from './utils/apiServiceFactory';
 import router from './router'
-import "./assets/styles.scss";
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({

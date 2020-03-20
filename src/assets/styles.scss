@@ -1,4 +1,11 @@
 @import '~reset-css';
+@import 'media-queries';
+
+
+$color-white: #fff;
+$color-navy: #302B5C;
+
+$topbar-height: 84px;
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -17,4 +24,10 @@
 }
 .app__side {
   flex: 0 0 300px;
+  background-color: $color-navy;
+  height: calc(100vh - $topbar-height);
+
+  @include media-query-lg-up {
+    height: 100vh;
+  }
 }
