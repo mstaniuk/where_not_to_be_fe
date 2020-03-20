@@ -5,20 +5,24 @@
 
 
 $color-white: #fff;
+$color-darkgrey: #535C52;
+$color-black: #000;
+
 $color-navy: #302B5C;
 $color-lightblue: #95B7DF;
 $color-salmon: #CC5B54;
-$color-darkgrey: #535C52;
 
 $topbar-height: 70px;
 $menu-btn-size: 40px;
 $sidebar-width: 300px;
 
+@import "_mixins";
 @import "_global";
 @import "_layout";
 
 @import "_bottom";
 @import "_buttons";
+@import "_main-menu";
 @import "_map";
 @import "_page-head";
 @import "_side";

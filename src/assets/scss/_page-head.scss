@@ -41,13 +41,11 @@
   }
 
   &__expander {
+    @include circle-shaped(18px);
     border: 2px solid $color-lightblue;
-    width: 18px;
-    height: 18px;
     line-height: 18px;
     text-align: center;
     display: block;
-    border-radius: 50%;
     position: absolute;
     top: 0;
     right: 0;

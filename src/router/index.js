@@ -1,6 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+
 import CrowdedPlaces from "@/views/CrowdedPlaces";
+import OfficialInformation from "@/views/OfficialInformation";
+import WaysToHelp from "@/views/WaysToHelp";
+
 import Notifications from "@/views/Notifications";
 import Statistics from "@/views/Statistics";
 import Settings from "@/views/Settings";
@@ -13,6 +17,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: CrowdedPlaces
+  },
+  {
+    path: "/information",
+    name: "Official information",
+    component: OfficialInformation
+  },
+  {
+    path: "/help",
+    name: "Ways to help",
+    component: WaysToHelp
   },
   {
     path: "/notifications",
