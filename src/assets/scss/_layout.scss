@@ -1,10 +1,10 @@
 .app__main {
-  padding: 30px;
-  padding-top: 30px + $topbar-height;
+  padding-top: $topbar-height;
+  width: 100%;
 
   @include media-query-lg-up {
     flex: 1 1 100%;
-    padding-top: 30px;
+    padding-top: 0;
   }
 }
   

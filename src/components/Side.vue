@@ -1,7 +1,9 @@
 <template>
   <div class="side">
     <div v-if="!isMobile" class="app-logo">
-      <img :src="AppLogo" alt="Avoidly application logo" />
+      <router-link :to="{ path: '/' }">
+        <img :src="AppLogo" alt="Avoidly application logo" />
+      </router-link>
     </div>
 
     <div class="user">

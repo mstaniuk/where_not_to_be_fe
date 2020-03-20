@@ -8,6 +8,7 @@ $color-white: #fff;
 $color-navy: #302B5C;
 $color-lightblue: #95B7DF;
 $color-salmon: #CC5B54;
+$color-darkgrey: #535C52;
 
 $topbar-height: 70px;
 $menu-btn-size: 40px;
@@ -15,8 +16,10 @@ $sidebar-width: 300px;
 
 @import "_global";
 @import "_layout";
+
+@import "_bottom";
 @import "_buttons";
 @import "_map";
-@import "_bottom";
+@import "_page-head";
 @import "_side";
 @import "_top-bar";
