@@ -1,8 +1,9 @@
 <template>
   <div class="side">
-    <div class="app-logo">
+    <div v-if="!isMobile" class="app-logo">
       <img :src="AppLogo" alt="Avoidly application logo" />
     </div>
+
     <div class="user">
       <picture
         class="user__avatar"
