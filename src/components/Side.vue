@@ -37,20 +37,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.side {
-  background-color: $color-navy;
-}
-
-.user {
-  &__name {
-    color: $color-white;
-  }
-
-  &__avatar {
-    width: 60px;
-    height: 60px;
-  }
-}
-</style>

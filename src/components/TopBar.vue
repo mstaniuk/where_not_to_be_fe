@@ -27,29 +27,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss">
-    .top-bar {
-        height: $topbar-height;
-        text-align: center;
-        width: 100vw;
-        background-color: lighten($color-navy, 10%);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-
-        &__menu-btn {
-            cursor: pointer;
-            width: $menu-btn-size;
-            height: $menu-btn-size;
-            text-align: center;
-            font-size: 40px;
-            color: $color-white;
-
-            i {
-                line-height: $menu-btn-size;
-            }
-        }
-    }
-</style>

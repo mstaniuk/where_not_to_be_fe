@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint && stylelint '**/*.scss' --syntax scss --fix -f verbose --color"
   },
   "dependencies": {
     "axios": "0.19.2",
@@ -25,6 +25,7 @@
     "eslint-plugin-vue": "^6.1.2",
     "sass": "1.26.3",
     "sass-loader": "8.0.2",
+    "stylelint": "^13.2.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
