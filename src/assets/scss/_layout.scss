@@ -16,12 +16,14 @@
   top: $topbar-height;
   width: $sidebar-width;
   transform: translateX(-$sidebar-width);
-  z-index: 1000;
+  z-index: 2000;
   animation-name: hidemenu;
   animation-duration: .5s;
   animation-timing-function: ease-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  @include bg-image('~@/assets/images/sidebar-bg.svg');
+  overflow: scroll;
   
   &--visible {
     animation-name: showmenu;

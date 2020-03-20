@@ -1,9 +1,19 @@
 <template>
-  <h1>Logout</h1>
+  <section id="logout" class="page">
+    <PageHead>
+      <template v-slot:title>
+        Logout
+      </template>
+    </PageHead>
+  </section>
 </template>
 
 <script>
+import PageHead from "@/components/PageHead.vue";
+
 export default {
-  name: "Logout"
+  name: "Logout",
+
+  components: { PageHead }
 };
 </script>
