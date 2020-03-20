@@ -29,9 +29,12 @@
   }
   
   @include media-query-lg-up {
+    position: relative;
     flex: 0 0 $sidebar-width;
     height: 100vh;
     top: 0;
+    animation: none;
+    transform: none;
   }
 }
 
