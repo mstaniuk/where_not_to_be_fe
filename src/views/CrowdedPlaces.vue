@@ -3,17 +3,17 @@
 </template>
 
 <script>
-import Map from '@/components/Map.vue'
-import L from 'leaflet';
+import Map from "@/components/Map.vue";
+import L from "leaflet";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: { Map },
   data() {
     return {
       user: {
         lat: 50.049679,
-        lng: 19.947022,
+        lng: 19.947022
       },
       poi: []
     };
@@ -25,13 +25,12 @@ export default {
         const latLng = L.latLng(r.loc[0].lat, r.loc[0].lng);
         return {
           ...r,
-          latLng,
-        }
-      })
+          latLng
+        };
+      });
     } catch (e) {
       console.log(e);
     }
-
   }
-}
+};
 </script>

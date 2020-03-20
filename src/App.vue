@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="app"
-    class="app"
-  >
+  <div id="app" class="app">
     <aside class="app__side">
       <Side />
     </aside>
@@ -17,23 +14,23 @@
 </template>
 
 <script>
-import Side from '@/components/Side.vue'
-import Bottom from '@/components/Bottom.vue'
-import TopBar from '@/components/TopBar.vue';
+import Side from "@/components/Side.vue";
+import Bottom from "@/components/Bottom.vue";
+import TopBar from "@/components/TopBar.vue";
 
 export default {
-  name: 'App',
-
-  data() {
-    return {
-      menuExpanded: false
-    }
-  },
+  name: "App",
 
   components: {
     Side,
     Bottom,
     TopBar
+  },
+
+  data() {
+    return {
+      menuExpanded: false
+    };
   }
-}
+};
 </script>

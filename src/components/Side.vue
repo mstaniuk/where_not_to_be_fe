@@ -27,7 +27,7 @@ export default {
         lastname: "Brzęczyszczykiewicz",
         avatar: null
       }
-    }
+    };
   },
 
   computed: {
@@ -35,5 +35,5 @@ export default {
       return this.user.avatar || avatarFallback;
     }
   }
-}
+};
 </script>
