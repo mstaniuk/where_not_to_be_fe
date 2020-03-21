@@ -1,0 +1,28 @@
+.ways-to-help {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+.adjustment-bar {
+  width: 100%;
+  background-color: $color-lightgrey;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+}
+
+.help-map {
+  width: 100%;
+  height: 100%;
+
+  .map {
+    min-height: 300px;
+  }
+}

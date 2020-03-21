@@ -1,5 +1,5 @@
 <template>
-  <section id="ways-to-help" class="page">
+  <section id="ways-to-help" class="page ways-to-help">
     <PageHead>
       <template v-slot:title>
         Ways to help

@@ -57,20 +57,20 @@
   // default colors
   @include defineSwitchColors(
     $color-lightblue,
-        $color-navy
+    $color-navy
     );
 
   &--blue {
     @include defineSwitchColors(
       $color-lightblue,
-        $color-navy
+      $color-navy
     );
   }
 
   &--red {
     @include defineSwitchColors(
       $color-salmon,
-            $color-red
+      $color-red
         );
   }
 }
