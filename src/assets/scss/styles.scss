@@ -14,6 +14,7 @@ $color-navy: #302B5C;
 $color-lightblue: #95B7DF;
 $color-red: #CC5B54;
 $color-salmon: #ECA58D;
+$color-yellow: #D8AF46;
 $color-green: #47B932;
 
 $topbar-height: 70px;
@@ -33,6 +34,7 @@ $sidebar-width: 300px;
 @import "_form";
 @import "_main-menu";
 @import "_map";
+@import "_notifications";
 @import "_page-head";
 @import "_popover";
 @import "_popover-create";
