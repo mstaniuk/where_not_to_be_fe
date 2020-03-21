@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import PopoverCreate from "@/components/PopoverCreate.vue";
+import PopoverCreate from "@/components/Controls/_PopoverCreate.vue";
 
 export default {
   name: "CreateTaskOrAction",

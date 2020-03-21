@@ -150,5 +150,6 @@ button.btn {
 
   .btn {
     @include defineSize(36px);
+    width: 220px;
   }
 }

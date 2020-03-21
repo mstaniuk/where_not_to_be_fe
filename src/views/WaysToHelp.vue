@@ -22,7 +22,7 @@
 
 <script>
 import PageHead from "@/components/PageHead.vue";
-import CreateTaskOrAction from "@/components/CreateTaskOrAction.vue";
+import CreateTaskOrAction from "@/components/Controls/CreateTaskOrAction.vue";
 
 export default {
   name: "WaysToHelp",

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import SwitchControl from "@/components/SwitchControl";
+import SwitchControl from "@/components/Controls/SwitchControl";
 import Map from "@/components/Map.vue";
 import L from "leaflet";
 
