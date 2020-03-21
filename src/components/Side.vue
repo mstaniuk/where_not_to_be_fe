@@ -38,7 +38,7 @@
     <div class="jcvd">
       <span class="jcvd__heading">ADVERT</span>
 
-      <a href="#" title="">
+      <a href="#" class="jcvd__main">
         <img
           class="jcvd__image"
           :src="AdvertImage"
@@ -46,6 +46,27 @@
           title="Jean-Claude Van Damme"
         />
       </a>
+
+      <div class="jcvd__postfix">
+        <router-link :to="{ path: '/advertising' }">
+          help our medics buy ad points to place your ad
+        </router-link>
+
+        <div v-outerclick="hideTooltip" class="jcvd__tooltip">
+          <i class="icon icon-question" @click="showTooltip = !showTooltip" />
+
+          <popover v-if="showTooltip" :position="['right', 'bottom']">
+            <h3 class="brygada jcvd__tooltip-title">
+              Adverising
+            </h3>
+
+            Our advertising system is dedicated to society. When people stay at
+            home, they earn AD SCORE, which is assigned to theis area. You can
+            buy ads to display in this area (1 point = 40 views). We spend the
+            income to help fighting the epidemy.
+          </popover>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -54,9 +75,12 @@
 import avatarFallback from "@/assets/images/avatar.png";
 import AppLogo from "@/assets/images/AppLogo.svg";
 import AdvertImage from "@/assets/images/jcvd.png";
+import Popover from "@/components/Popover";
 
 export default {
   name: "Side",
+
+  components: { Popover },
 
   data() {
     return {
@@ -67,6 +91,7 @@ export default {
         lastname: "Brzęczyszczykiewicz",
         avatar: null
       },
+      showTooltip: false,
       menu: [
         { path: "/notifications", label: "Notifications" },
         { path: "/statistics", label: "Statistics" },
@@ -80,6 +105,12 @@ export default {
   computed: {
     avatarUrl() {
       return this.user.avatar || avatarFallback;
+    }
+  },
+
+  methods: {
+    hideTooltip() {
+      this.showTooltip = false;
     }
   }
 };
