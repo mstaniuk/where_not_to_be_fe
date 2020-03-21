@@ -24,7 +24,14 @@
 
     <template v-else>
       <div class="create-task__adjustment adjustment-bar">
-        BAR
+        <router-link class="adjustment-bar__back" :to="{ path: '/help' }">
+          <i />
+          <span>Back to map</span>
+        </router-link>
+
+        <button class="btn btn--filled btn--red btn--small">
+          Save {{ type }}
+        </button>
       </div>
 
       <div class="create-task__description">
@@ -56,10 +63,20 @@ export default {
     };
   },
 
+  computed: {
+    type() {
+      return this.is("task") || this.is("action");
+    }
+  },
+
   methods: {
     setActiveForm(formName) {
       console.log(formName);
       this.activeForm = formName;
+    },
+
+    is(type) {
+      return this.$route.path.includes(type) ? type : null;
     }
   }
 };
