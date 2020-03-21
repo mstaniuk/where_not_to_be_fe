@@ -1,0 +1,71 @@
+@import "~vue-range-component/dist/vue-range-slider.css";
+
+.places {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__actions {
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &--expanded {
+      padding-bottom: 30px;
+    }
+
+    @include media-query-sm-up {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    @include media-query-lg-up {
+      padding: 10px 40px;
+    }
+  }
+
+  &__search {
+    margin: 5px 0 15px;
+
+    @include media-query-sm-up {
+      margin-bottom: 4px;
+      margin-right: 20px;
+    }
+  
+    input {
+      height: 32px !important;
+      border-radius: 20px;
+      width: 240px;
+    }
+  }
+  
+  &__actions-bar {
+    transition: transform 250ms ease-in-out;
+    position: relative;
+    width: 100%;
+    top: 20%;
+    height: 0;
+    transform: scaleY(0);
+    visibility: hidden;
+    pointer-events: none;
+    transform-origin: top;
+  
+    &--visible {
+      height: 30px;
+      transform: scaleY(1);
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+  
+  &__content {
+    position: relative;
+    flex: 1 1 100%;
+    z-index: 1;
+  }
+}

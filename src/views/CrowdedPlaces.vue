@@ -11,16 +11,28 @@
         <a href="#">read why</a>
       </template>
     </PageHead>
-    <div class="places__actions">
-      <div class="places__action">
-        <!--        <Search/>-->
-      </div>
-      <div class="places__action">
-        <FiltersButton
-          :active="actionsBarVisible"
-          @click.native="searchClickHandler"
+
+    <div
+      :class="[
+        'places__actions',
+        'adjustment-bar',
+        actionsBarVisible ? 'places__actions--expanded' : ''
+      ]"
+    >
+      <div class="places__search">
+        <input
+          id="location"
+          name="location"
+          class="form__field"
+          placeholder="Search location"
+          type="text"
         />
       </div>
+
+      <FiltersButton
+        :active="actionsBarVisible"
+        @click.native="searchClickHandler"
+      />
 
       <div
         class="places__actions-bar"
@@ -103,75 +115,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-@import "~vue-range-component/dist/vue-range-slider.css";
-
-.places {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-  &__header {
-    background-color: #ffffff;
-    padding: 40px;
-    color: #302b5c;
-    flex: 0 0 auto;
-  }
-
-  &__title {
-    font-size: 40px;
-  }
-
-  &__description {
-    a {
-      font-weight: bold;
-      text-decoration: underline;
-    }
-  }
-
-  &__actions {
-    position: relative;
-    z-index: 2;
-    flex: 0 0 auto;
-    padding: 12px;
-    display: flex;
-    background-color: #e8e8e8;
-  }
-
-  &__action {
-    & + & {
-      margin-left: 24px;
-    }
-  }
-
-  &__actions-bar {
-    transition: transform 250ms ease-in-out, visibility 0ms 250ms ease-in-out;
-    background-color: #e8e8e8;
-    position: absolute;
-    width: 100%;
-    height: 30px;
-    top: 100%;
-    left: 0;
-    right: 0;
-    transform: scaleY(0);
-    visibility: hidden;
-    pointer-events: none;
-    transform-origin: top;
-    padding: 0 40px 10px;
-
-    &--visible {
-      transition: transform 250ms ease-in-out;
-      transform: scaleY(1);
-      visibility: visible;
-      pointer-events: all;
-    }
-  }
-
-  &__content {
-    position: relative;
-    flex: 1 1 100%;
-    z-index: 1;
-  }
-}
-</style>
