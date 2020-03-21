@@ -1,12 +1,16 @@
 .page-head {
   padding: 15px 20px;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 
   &__content {
+    width: 100%;
+
     h1 {
       font-size: 30px;
       line-height: 42px;
@@ -38,6 +42,8 @@
   &__buttons {
     position: relative;
     min-width: 30px;
+    margin-top: 15px;
+    width: 100%;
   }
 
   &__expander {
@@ -47,8 +53,8 @@
     text-align: center;
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 30px;
+    right: 30px;
     cursor: pointer;
 
     i {
@@ -61,6 +67,13 @@
 
     &--inversed {
       transform: rotate(180deg);
+    }
+  }
+
+  @include media-query-sm-up {
+    &__buttons,
+    &__content {
+      width: auto;
     }
   }
 

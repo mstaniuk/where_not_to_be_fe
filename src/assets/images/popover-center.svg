@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="30px" viewBox="0 0 66 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Popover/Center</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Popover/Center" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M66,0 L66,15.1926075 C60.5865902,15.1771811 55.5550403,15.1676031 50.9053503,15.1638738 C46.501181,15.1603413 40.6806034,20.1057167 33.4436176,30 C25.6346472,20.0959986 19.860887,15.1430162 16.1223371,15.1410529 C7.60958484,15.1365822 2.23547246,15.1320211 0,15.1273696 L0,0 L66,0 Z" id="Rectangle" fill="#FFFFFF" transform="translate(33.000000, 15.000000) rotate(-360.000000) translate(-33.000000, -15.000000) "></path>
+    </g>
+</svg>

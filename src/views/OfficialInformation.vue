@@ -4,24 +4,55 @@
       <template v-slot:title>
         Official information
       </template>
+
       <template v-slot:text>
         Here is the map with some density indicators which should help you
         <br />
         to avoid crowdy places. It's really important -
         <a href="#">read why</a>
       </template>
+
+      <template v-slot:buttons>
+        <button class="btn btn--contour btn--navy btn--small">Share</button>
+        <button
+          :class="
+            `btn btn--filled btn--red btn--small ml-15 ${
+              isMobile ? 'mr-50' : ''
+            }`
+          "
+        >
+          Report
+        </button>
+      </template>
     </PageHead>
 
-    <div class="page__content">
-      <chart-of-infected />
+    <div class="page__content official-info">
+      <template v-if="!isMobile">
+        <div class="official-info__left">
+          <chart-of-infected />
 
-      <instructions />
+          <instructions />
+        </div>
+        <div class="official-info__right">
+          <numbers-of-infected />
 
-      <numbers-of-infected />
+          <market-loss />
 
-      <market-loss />
+          <call-for-help />
+        </div>
+      </template>
 
-      <call-for-help />
+      <template v-else>
+        <chart-of-infected />
+
+        <numbers-of-infected />
+
+        <call-for-help />
+
+        <instructions />
+
+        <market-loss />
+      </template>
     </div>
   </section>
 </template>
