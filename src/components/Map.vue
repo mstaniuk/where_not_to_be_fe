@@ -41,6 +41,7 @@ export default {
     LPopup,
     LCircleMarker
   },
+
   props: {
     poi: {
       type: Array,
@@ -51,6 +52,7 @@ export default {
       default: () => {}
     }
   },
+
   data() {
     return {
       zoom: 18,
@@ -60,11 +62,13 @@ export default {
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     };
   },
+
   computed: {
     currentPosition() {
       return L.latLng(this.position.lat, this.position.lng);
     }
   },
+
   mounted() {
     this.$nextTick(() => {
       this.$refs.map.mapObject.on("moveend", ev => {
@@ -72,6 +76,7 @@ export default {
       });
     });
   },
+
   methods: {
     getCircleColorByDensity(density) {
       if (density < 5) {
