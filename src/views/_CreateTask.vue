@@ -23,8 +23,17 @@
     </template>
 
     <template v-else>
-      <div class="create-task__description"></div>
-      <div class="create-task__location"></div>
+      <div class="create-task__adjustment adjustment-bar">
+        BAR
+      </div>
+
+      <div class="create-task__description">
+        <DescriptionForm />
+      </div>
+
+      <div class="create-task__location">
+        <LocationForm />
+      </div>
     </template>
   </div>
 </template>

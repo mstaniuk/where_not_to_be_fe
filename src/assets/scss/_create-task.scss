@@ -3,4 +3,28 @@
   &__location {
     padding: 25px;
   }
+
+  @include media-query-lg-up {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+
+    &__description,
+    &__location {
+      width: 50%;
+    }
+
+    &__description {
+      padding: 25px 40px;
+    }
+
+    &__location {
+      padding: 0;
+      background-color: $color-grey;
+      height: 100%;
+    }
+
+    &__adjustment {
+    }
+  }
 }

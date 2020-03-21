@@ -71,3 +71,11 @@ a {
     padding-left: 15px;
   }
 }
+
+.adjustment-bar {
+  width: 100%;
+  background-color: $color-lightgrey;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+}
