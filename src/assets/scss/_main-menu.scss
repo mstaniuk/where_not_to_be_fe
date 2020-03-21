@@ -14,7 +14,7 @@
   background-color: $color-white;
   width: 260px;
   padding: 0 12px 8px;
-  z-index: 2000;
+  z-index: 1900;
   @include dark-shadow;
 
   &__list {
