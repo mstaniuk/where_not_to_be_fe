@@ -37,3 +37,37 @@ a {
   font-size: 14px;
   line-height: 22px;
 }
+
+.official-info {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 768px;
+  margin: 0 auto;
+
+  .card {
+    width: 100%;
+  }
+
+  @include media-query-lg-up {
+    max-width: unset;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__left {
+    width: 66.66%;
+    padding-right: 15px;
+  }
+
+  &__right {
+    width: 33.33%;
+    padding-left: 15px;
+  }
+}
