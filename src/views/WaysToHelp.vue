@@ -12,7 +12,7 @@
       </template>
 
       <template v-slot:buttons>
-        <div>
+        <div v-outerclick="hidePopover">
           <button
             :class="[
               'btn btn--filled btn--red btn--small ml-15',
@@ -45,6 +45,12 @@ export default {
     return {
       showPopover: false
     };
+  },
+
+  methods: {
+    hidePopover() {
+      if (this.showPopover) this.showPopover = false;
+    }
   }
 };
 </script>
