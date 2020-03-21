@@ -4,9 +4,25 @@
     color: $color1;
     background-color: transparent;
 
+    &.btn--arrow-down {
+      @include arrow-down($color1);
+    }
+
+    &.btn--arrow-up {
+      @include arrow-up($color2);
+    }
+
     &:hover {
       background-color: $color1;
       color: $color2;
+
+      &.btn--arrow-down {
+        @include arrow-down($color2);
+      }
+
+      &.btn--arrow-up {
+        @include arrow-up($color2);
+      }
     }
   }
 }
@@ -22,9 +38,18 @@
     color: $textColor;
     background-color: $fillColor;
 
+    &.btn--arrow-down {
+      @include arrow-down($textColor);
+    }
+
+    &.btn--arrow-up {
+      @include arrow-up($textColor);
+    }
+
     &:hover {
       background-color: $fillHoverColor;
       box-shadow: 0 5px 17px 0 rgba($fillHoverColor, .15);
+      color: $textHoverColor;
     }
   }
 }
@@ -34,13 +59,23 @@
   line-height: $size;
   height: $size;
   border-radius: $size/2;
-  padding: 0 ($size/2);
+  padding: 0 $size;
   letter-spacing: (1/9) * ($size/2);
+
+  &.btn--arrow-down,
+  &.btn--arrow-up {
+    padding-right: 1.5 * $size;
+
+    &::before {
+      right: $size * .7;
+    }
+  }
 }
 
 .btn {
   display: inline-block;
   font-weight: bolder;
+  position: relative;
   text-decoration: none;
   box-sizing: border-box;
   text-align: center;
