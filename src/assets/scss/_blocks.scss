@@ -77,3 +77,16 @@
     border-bottom: 0;
   }
 }
+
+.call-help {
+  text-align: center;
+  background-color: $color-navy;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &__question {
+    color: $color-white;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+}
