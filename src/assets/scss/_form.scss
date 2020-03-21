@@ -1,0 +1,60 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__field-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+
+  &__field {
+    width: 100%;
+    border: 1px solid $color-navy;
+    background-color: $color-white;
+    border-radius: 20px;
+    padding: 8px 18px;
+    line-height: 24px;
+    font-size: 16px;
+    box-sizing: border-box;
+    color: $color-darkgrey;
+    transition: .2s ease-in;
+
+    &:not(textarea) {
+      height: 40px;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 1px $color-navy;
+      color: $color-navy;
+    }
+  }
+
+  &__label {
+    @include label-text-styles;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-left: 18px;
+    margin-bottom: 5px;
+  }
+
+  textarea[rows] {
+    resize: none;
+  }
+
+  @include media-query-sm-up {
+    &__field-container {
+      &--left {
+        width: 60%;
+        padding-right: 15px;
+      }
+
+      &--right {
+        width: 40%;
+        padding-left: 15px;
+      }
+    }
+  }
+}
