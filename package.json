@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint && stylelint '**/*.scss' --syntax scss --fix -f verbose --color",
-    "heroku-postbuild": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@vue/eslint-config-prettier": "^6.0.0",
