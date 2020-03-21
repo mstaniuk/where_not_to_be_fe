@@ -1,0 +1,54 @@
+.settings {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  &__block {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  &__avatar {
+    width: 100px !important;
+    height: 100px !important;
+    float: right;
+    margin-top: -50px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    .label {
+      @include label-text-styles;
+    }
+
+    .value {
+      font-weight: bold;
+      color: $color-navy;
+      margin: 8px 0;
+    }
+
+    i {
+      margin-left: 15px;
+      color: $color-lightblue;
+      transition: .2s ease-in;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-navy;
+      }
+    }
+  }
+
+  @include media-query-sm-up {
+    padding: 25px 40px;
+        
+    &__block {
+      width: 45%;
+    }
+  }
+}

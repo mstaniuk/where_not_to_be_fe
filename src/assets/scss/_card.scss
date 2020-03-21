@@ -20,6 +20,18 @@
       background-color: $color-red;
       color: $color-white;
     }
+
+    &--navy {
+      border-top: bottom;
+      background-color: $color-navy;
+      color: $color-white;
+    }
+
+    &--blue {
+      border-top: bottom;
+      background-color: $color-lightblue;
+      color: $color-white;
+    }
   }
 
   &__chart-title {
