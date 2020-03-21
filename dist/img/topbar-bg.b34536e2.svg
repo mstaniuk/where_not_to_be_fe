@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="541px" height="84px" viewBox="0 0 541 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Backgrounds/Topbar</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="540" height="84"></rect>
+        <filter x="-4.1%" y="-23.8%" width="108.1%" height="152.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-3">
+            <stop stop-color="#CC5B54" offset="0%"></stop>
+            <stop stop-color="#302B5C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Backgrounds/Topbar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#302B5C" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <path d="M300,-156.36983 C314.101839,-161.051092 325.277546,-139.651039 333.527121,-92.1696723 C345.390086,-23.8910364 322.536496,43.9845359 327.657658,189.709146 C329.279279,235.853009 336.726727,263.949961 350,274 L300,274 L300,-156.36983 Z" id="Rectangle" fill="url(#linearGradient-3)" transform="translate(325.000000, 58.500000) rotate(-90.000000) translate(-325.000000, -58.500000) "></path>
+    </g>
+</svg>
