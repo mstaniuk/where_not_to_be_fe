@@ -20,6 +20,8 @@ a {
 }
 
 .page {
+  padding-bottom: 120px;
+
   &__content {
     padding: 0 20px;
   }
@@ -29,4 +31,9 @@ a {
       padding: 0 40px;
     }
   }
+}
+
+.instructions {
+  font-size: 14px;
+  line-height: 22px;
 }

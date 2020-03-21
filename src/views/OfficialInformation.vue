@@ -16,18 +16,35 @@
       <chart-of-infected />
 
       <instructions />
+
+      <numbers-of-infected />
+
+      <market-loss />
+
+      <call-for-help />
     </div>
   </section>
 </template>
 
 <script>
 import PageHead from "@/components/PageHead.vue";
-import Instructions from "@/components/Information/Instructions.vue";
+
+import CallForHelp from "@/components/Information/CallForHelp.vue";
 import ChartOfInfected from "@/components/Information/ChartOfInfected.vue";
+import Instructions from "@/components/Information/Instructions.vue";
+import MarketLoss from "@/components/Information/MarketLoss.vue";
+import NumbersOfInfected from "@/components/Information/NumbersOfInfected.vue";
 
 export default {
   name: "OfficialInformation",
 
-  components: { ChartOfInfected, Instructions, PageHead }
+  components: {
+    CallForHelp,
+    ChartOfInfected,
+    Instructions,
+    MarketLoss,
+    NumbersOfInfected,
+    PageHead
+  }
 };
 </script>
