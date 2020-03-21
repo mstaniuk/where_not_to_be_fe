@@ -4,11 +4,25 @@
       <template v-slot:title>
         Official information
       </template>
+
       <template v-slot:text>
         Here is the map with some density indicators which should help you
         <br />
         to avoid crowdy places. It's really important -
         <a href="#">read why</a>
+      </template>
+
+      <template v-slot:buttons>
+        <button class="btn btn--contour btn--navy btn--small">Share</button>
+        <button
+          :class="
+            `btn btn--filled btn--red btn--small ml-15 ${
+              isMobile ? 'mr-50' : ''
+            }`
+          "
+        >
+          Report
+        </button>
       </template>
     </PageHead>
 

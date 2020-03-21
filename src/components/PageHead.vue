@@ -16,18 +16,18 @@
 
     <div class="page-head__buttons">
       <slot name="buttons" />
-
-      <span
-        v-if="isMobile"
-        :class="{
-          'page-head__expander': true,
-          'page-head__expander--inversed': collapsed
-        }"
-        @click="collapsed = !collapsed"
-      >
-        <i />
-      </span>
     </div>
+
+    <span
+      v-if="isMobile"
+      :class="{
+        'page-head__expander': true,
+        'page-head__expander--inversed': collapsed
+      }"
+      @click="collapsed = !collapsed"
+    >
+      <i />
+    </span>
   </header>
 </template>
 
