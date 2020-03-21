@@ -30,6 +30,18 @@
       box-shadow: 0 0 0 1px $color-navy;
       color: $color-navy;
     }
+
+    &--error {
+      border-color: $color-red;
+    }
+  }
+
+  &__info {
+    padding: 4px 8px;
+    &--error {
+      color: $color-red;
+      font-size: 14px;
+    }
   }
 
   &__label {
