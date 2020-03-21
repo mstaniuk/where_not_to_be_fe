@@ -1,6 +1,9 @@
 <template>
   <card class="market-loss">
-    MARKET LOSS
+    <div class="market-loss--total">
+      <div class="label">Market loss</div>
+      <div class="value">1.2 bln</div>
+    </div>
   </card>
 </template>
 

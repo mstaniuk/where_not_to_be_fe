@@ -3,7 +3,8 @@
   line-height: 22px;
 }
 
-.numbers-of-infected {
+.numbers-of-infected,
+.market-loss {
   padding-top: 35px;
   display: flex;
   flex-wrap: wrap;
@@ -67,5 +68,12 @@
     margin-left: 0px;
     text-align: center;
     padding: 15px 0;
+  }
+}
+
+.market-loss {
+  &--total {
+    color: $color-darkgrey;
+    border-bottom: 0;
   }
 }
