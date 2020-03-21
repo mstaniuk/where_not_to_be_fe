@@ -1,6 +1,7 @@
 import Vue from "vue";
 import { Icon } from "leaflet";
 import VueApexCharts from "vue-apexcharts";
+import { directive as vClickOutside } from "vue-clickaway";
 
 import App from "@/App.vue";
 import router from "@/router";
@@ -32,6 +33,9 @@ Vue.mixin(viewportMixin);
 // Global components
 Vue.component("apexchart", VueApexCharts);
 Vue.component("card", Card);
+
+// Global directives
+Vue.directive("outerclick", vClickOutside);
 
 Vue.config.productionTip = false;
 

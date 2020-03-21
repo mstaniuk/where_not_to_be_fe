@@ -1,66 +1,66 @@
 .popover {
+  position: absolute;
+  background-color: $color-white;
+  color: $color-navy;
+  padding: 15px;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 10px;
+  min-width: 180px;
+  @include dark-shadow(0, 3px);
+
+  &::after {
+    content: "";
+    width: 70px;
+    height: 25px;
     position: absolute;
-    background-color: $color-white;
-    color: $color-navy;
-    padding: 15px;
-    font-size: 12px;
-    line-height: 16px;
-    border-radius: 10px;
-    min-width: 180px;
-    @include dark-shadow(0, 3px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    // background-color: $color-navy;
+  }
+
+  &[class$="-top"] {
+    top: 100%;
+    margin-top: 20px;
+    height: 100px;
 
     &::after {
-        content: "";
-        width: 70px;
-        height: 25px;
-        position: absolute;
-        background-size: contain;
-        background-repeat: no-repeat;
-        // background-color: $color-navy;
+      bottom: 100%;
+      margin-bottom: -13px;
     }
+  }
 
-    &[class$="-top"] {
-        top: 100%;
-        margin-top: 20px;
-        height: 100px;
+  &[class*="--right-"] {
+    right: 10px;
 
-        &::after {
-            bottom: 100%;
-            margin-bottom: -13px;
-        }
+    &::after {
+      right: 10px;
+      background-image: url('~@/assets/images/popover-left.svg');
+      background-position-x: left;
+      transform: rotate(180deg);
     }
+  }
 
-    &[class*="--right-"] {
-        right: 10px;
+  &[class*="--left-"] {
+    left: 10px;
 
-        &::after {
-            right: 10px;
-            background-image: url('~@/assets/images/popover-left.svg');
-            background-position-x: left;
-            transform: rotate(180deg);
-        }
+    &::after {
+      left: 10px;
+      background-image: url('~@/assets/images/popover-right.svg');
+      background-position-x: right;
+      transform: rotate(180deg);
     }
+  }
 
-    &[class*="--left-"] {
-        left: 10px;
+  &[class*="--center-"] {
+    left: 50%;
+    transform: translateX(-50%);
 
-        &::after {
-            left: 10px;
-            background-image: url('~@/assets/images/popover-right.svg');
-            background-position-x: right;
-            transform: rotate(180deg);
-        }
+    &::after {
+      left: 50%;
+      background-image: url('~@/assets/images/popover-center.svg');
+      background-position-x: center;
+      transform: translateX(-50%) rotate(180deg);
     }
-
-    &[class*="--center-"] {
-        left: 50%;
-        transform: translateX(-50%);
-
-        &::after {
-            left: 50%;
-            background-image: url('~@/assets/images/popover-center.svg');
-            background-position-x: center;
-            transform: translateX(-50%) rotate(180deg);
-        }
-    }
+  }
 }
