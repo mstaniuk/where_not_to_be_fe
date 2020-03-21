@@ -56,44 +56,45 @@ export default {
       poiDensityFilterValue: 0
     };
   },
-    computed: {
-      filteredPoi() {
-        return this.poi.filter(p => p.density >= this.poiDensityFilterValue)
-      }
-    },
-    watch: {
-      position() {
-        this.getPoiByPosition();
-      }
-    },
-    async mounted() {
+  computed: {
+    filteredPoi() {
+      return this.poi.filter(p => p.density >= this.poiDensityFilterValue);
+    }
+  },
+  watch: {
+    position() {
       this.getPoiByPosition();
+    }
+  },
+  async mounted() {
+    this.getPoiByPosition();
+  },
+  methods: {
+    searchClickHandler() {
+      this.actionsBarVisible = !this.actionsBarVisible;
     },
-    methods: {
-      searchClickHandler() {
-        this.actionsBarVisible = !this.actionsBarVisible;
-      },
-      onMovedHandler(ev) {
-        this.position = ev.target.getCenter();
-      },
-      async getPoiByPosition() {
-        try {
-          const response = await this.$api.getPoiByMapCenter(this.position);
-          const newPoi = response.data.map(r => {
-            const latLng = L.latLng(r.lat, r.lng);
-            return {
-              ...r,
-              latLng
-            };
-          });
+    onMovedHandler(ev) {
+      this.position = ev.target.getCenter();
+    },
+    async getPoiByPosition() {
+      try {
+        const response = await this.$api.getPoiByMapCenter(this.position);
+        const newPoi = response.data.map(r => {
+          const latLng = L.latLng(r.lat, r.lng);
+          return {
+            ...r,
+            latLng
+          };
+        });
 
-          this.poi = [
-            ...this.poi,
-            ...newPoi.filter(np => this.poi.findIndex(p => np.name === p.name) < 0)
-          ]
-        } catch (e) {
-          console.log(e);
-        }
+        this.poi = [
+          ...this.poi,
+          ...newPoi.filter(
+            np => this.poi.findIndex(p => np.name === p.name) < 0
+          )
+        ];
+      } catch (e) {
+        console.log(e);
       }
     }
   }
