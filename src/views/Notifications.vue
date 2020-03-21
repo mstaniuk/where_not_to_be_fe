@@ -26,7 +26,7 @@
 
         <div class="notifications__actions">
           <span @click="markAsRead(item)">Mark as read</span>
-          <span>Delete</span>
+          <span @click="remove(item, unread)">Delete</span>
         </div>
       </card>
     </div>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="notifications__actions">
-          <span>Delete</span>
+          <span @click="remove(item, read)">Delete</span>
         </div>
       </card>
     </div>
@@ -75,7 +75,16 @@ export default {
   },
 
   methods: {
-    markAsRead() {}
+    markAsRead(item) {
+      const index = this.unread.indexOf(item);
+      const markedAsRead = this.unread.splice(index, 1);
+      this.read = [item, ...this.read];
+    },
+
+    remove(item, list) {
+      const index = list.indexOf(item);
+      list.splice(index, 1);
+    }
   }
 };
 </script>
