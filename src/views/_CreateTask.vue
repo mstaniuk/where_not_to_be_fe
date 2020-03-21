@@ -24,7 +24,14 @@
 
     <template v-else>
       <div class="create-task__adjustment adjustment-bar">
-        BAR
+        <router-link class="adjustment-bar__back" :to="{ path: '/help' }">
+          <i />
+          <span>Back to map</span>
+        </router-link>
+
+        <button class="btn btn--filled btn--red btn--small">
+          SAVE TASK
+        </button>
       </div>
 
       <div class="create-task__description">

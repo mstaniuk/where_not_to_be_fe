@@ -78,4 +78,35 @@ a {
   padding: 15px 30px;
   display: flex;
   align-items: center;
+
+  &__back {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+
+    i {
+      width: 36px;
+      height: 12px;
+      display: block;
+      background-size: auto 100%;
+      background-image: url('~@/assets/images/arrow-back.svg');
+      background-repeat: no-repeat;
+      background-position: left center;
+      transition: .2s ease-in;
+    }
+
+    span {
+      @include label-text-styles;
+      margin-left: 8px;
+      font-weight: bold;
+      color: $color-darkgrey;
+    }
+
+    &:hover {
+      i {
+        transform: translateX(-5px);
+      }
+    }
+  }
 }
