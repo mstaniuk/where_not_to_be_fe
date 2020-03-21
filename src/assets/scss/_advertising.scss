@@ -1,0 +1,93 @@
+.advertising {
+  position: relative;
+  padding: 0 40px 25px;
+
+  &__illustration {
+    max-width: 80vw;
+  }
+
+  &__adscore {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 25px;
+    margin-right: 25px;
+
+    span {
+      &:nth-of-type(1) {
+        @include label-text-styles;
+      }
+
+      &:nth-of-type(2) {
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-green;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 32px;
+    line-height: 40px;
+    color: $color-salmon;
+    @extend .brygada;
+    margin-top: 30px;
+  }
+
+  p {
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 15px 0;
+
+    &.advertising__conclusion {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      color: $color-navy;
+      padding-left: 0;
+      margin-top: 40px;
+    }
+  }
+
+  ul {
+    list-style: circle;
+    padding-left: 20px;
+    margin-bottom: 50px;
+  }
+
+  li {
+    margin: 10px auto;
+    font-weight: bold;
+    color: $color-navy;
+  }
+
+  &__cta {
+    background-color: $color-lightblue;
+    padding: 10px 20px;
+    margin-top: 30px;
+    text-align: center;
+
+    p {
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    button {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include media-query-md-up {
+    &__illustration {
+      max-width: 45vw;
+      float: right;
+    }
+
+    p {
+
+      max-width: 60vw;
+    }
+  }
+}
