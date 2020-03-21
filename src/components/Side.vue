@@ -49,7 +49,8 @@
 
       <div class="jcvd__postfix">
         <router-link :to="{ path: '/advertising' }">
-          help our medics buy ad points to place your ad
+          help our medics! <br />
+          buy ad points to place your ad
         </router-link>
 
         <div v-outerclick="hideTooltip" class="jcvd__tooltip">
