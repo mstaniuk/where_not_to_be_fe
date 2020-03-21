@@ -21,7 +21,11 @@
     <nav class="side-menu">
       <ul class="side-menu__list">
         <li v-for="item in menu" :key="item.path" class="side-menu__item">
-          <router-link :to="{ path: item.path }">
+          <router-link
+            :to="{ path: item.path }"
+            :title="item.alert || item.label"
+            :class="{ alert: !!item.alert }"
+          >
             {{ item.label }}
           </router-link>
         </li>
@@ -94,7 +98,11 @@ export default {
       },
       showTooltip: false,
       menu: [
-        { path: "/notifications", label: "Notifications" },
+        {
+          path: "/notifications",
+          label: "Notifications",
+          alert: "You have 5 unread notifications"
+        },
         { path: "/statistics", label: "Statistics" },
         { path: "/settings", label: "Settings" },
         { path: "/logout", label: "Logout" }
