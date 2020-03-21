@@ -5,26 +5,31 @@
       <l-marker
         :lat-lng="position"
         :icon="type === 'single' ? icons.blue : icons.red"
-      />
+      >
+        <LPopup>
+          <button class="btn btn--contour btn--red">Confirm</button>
+        </LPopup>
+      </l-marker>
     </LMap>
   </div>
 </template>
 
 <script>
 import L from "leaflet";
-import { LMap, LMarker, LTileLayer } from "vue2-leaflet";
+import { LMap, LMarker, LTileLayer, LPopup } from "vue2-leaflet";
 
 export default {
   components: {
     LMap,
     LTileLayer,
-    LMarker
+    LMarker,
+    LPopup
   },
 
   props: {
     type: {
-      type: Array,
-      default: () => []
+      type: String,
+      default: 'single'
     }
   },
 
@@ -65,6 +70,9 @@ export default {
     this.$nextTick(() => {
       this.$refs.map.mapObject.on("move", () => {
         this.position = this.$refs.map.mapObject.getCenter();
+      });
+      this.$refs.map.mapObject.on("moveend", () => {
+        this.$emit('change', this.$refs.map.mapObject.getCenter());
       });
     });
   }
