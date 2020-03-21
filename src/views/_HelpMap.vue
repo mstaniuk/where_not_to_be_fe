@@ -11,7 +11,7 @@
     </div>
 
     <div class="help-map">
-      <WMap :points="points" :position="position" @moved="onMovedHandler" />
+      <WMap :points="filteredPoints" :position="position" @moved="onMovedHandler" />
     </div>
   </div>
 </template>
@@ -52,7 +52,14 @@ export default {
         description: r.description,
         latLng: L.latLng(r.lat, r.lng)
       }));
-      console.log(this.points);
+    }
+  },
+  computed: {
+    filteredPoints() {
+      return this.points.filter(p =>
+        p.type === 'crowd' && this.showActions ||
+        p.type === 'single' && this.showTasks
+      )
     }
   },
 
