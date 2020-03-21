@@ -23,9 +23,8 @@
           >
             Create new
           </button>
-          <popover v-if="showPopover" :position="['right', 'top']">
-            Lorem ipsum
-          </popover>
+
+          <popover-create v-if="showPopover" />
         </div>
       </template>
     </PageHead>
@@ -34,12 +33,12 @@
 
 <script>
 import PageHead from "@/components/PageHead.vue";
-import Popover from "@/components/Popover.vue";
+import PopoverCreate from "@/components/PopoverCreate.vue";
 
 export default {
   name: "WaysToHelp",
 
-  components: { PageHead, Popover },
+  components: { PageHead, PopoverCreate },
 
   data() {
     return {
