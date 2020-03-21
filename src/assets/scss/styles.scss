@@ -5,6 +5,7 @@
 
 
 $color-white: #fff;
+$color-lightgrey: #E8E8E8;
 $color-darkgrey: #535C52;
 $color-black: #000;
 
@@ -22,6 +23,7 @@ $sidebar-width: 300px;
 
 @import "_bottom";
 @import "_buttons";
+@import "_card";
 @import "_main-menu";
 @import "_map";
 @import "_page-head";

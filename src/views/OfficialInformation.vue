@@ -11,15 +11,23 @@
         <a href="#">read why</a>
       </template>
     </PageHead>
+
+    <div class="page__content">
+      <chart-of-infected />
+
+      <instructions />
+    </div>
   </section>
 </template>
 
 <script>
 import PageHead from "@/components/PageHead.vue";
+import Instructions from "@/components/Information/Instructions.vue";
+import ChartOfInfected from "@/components/Information/ChartOfInfected.vue";
 
 export default {
   name: "OfficialInformation",
 
-  components: { PageHead }
+  components: { ChartOfInfected, Instructions, PageHead }
 };
 </script>

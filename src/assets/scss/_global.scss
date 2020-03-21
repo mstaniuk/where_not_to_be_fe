@@ -18,3 +18,15 @@ a {
   height: 100vh;
   display: flex;
 }
+
+.page {
+  &__content {
+    padding: 0 20px;
+  }
+
+  @include media-query-lg-up {
+    &__content {
+      padding: 0 40px;
+    }
+  }
+}

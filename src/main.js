@@ -1,12 +1,18 @@
 import Vue from "vue";
-import App from "./App.vue";
 import { Icon } from "leaflet";
-import httpClientFactory from "./utils/httpClientFactory";
-import apiServiceFactory from "./utils/apiServiceFactory";
-import router from "./router";
-import viewportMixin from "@/utils/viewportMixin";
+import VueApexCharts from "vue-apexcharts";
+
+import App from "@/App.vue";
+import router from "@/router";
 import "@/assets/scss/styles.scss";
 
+import httpClientFactory from "@/utils/httpClientFactory";
+import apiServiceFactory from "@/utils/apiServiceFactory";
+import viewportMixin from "@/utils/viewportMixin";
+
+import Card from "@/components/Card";
+
+// Leaflet configuration
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -14,15 +20,20 @@ Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
 });
 
-Vue.config.productionTip = false;
-
-const httpClient = httpClientFactory();
-const apiService = apiServiceFactory(httpClient, {
+// API configuration
+const apiService = apiServiceFactory(httpClientFactory(), {
   baseUrl: "http://avoidly-api.herokuapp.com"
 });
-
-Vue.mixin(viewportMixin);
 Vue.prototype.$api = apiService;
+
+// Global mixins
+Vue.mixin(viewportMixin);
+
+// Global components
+Vue.component("apexchart", VueApexCharts);
+Vue.component("card", Card);
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
