@@ -25,12 +25,12 @@
           'places__actions-bar--visible': actionsBarVisible
         }"
       >
-
+        <VueRangeSlider v-model="poiDensityFilterValue" />
       </div>
     </div>
 
     <div class="places__content">
-      <Map :poi="poi" :position="position" @moved="onMovedHandler"/>
+      <Map :poi="filteredPoi" :position="position" @moved="onMovedHandler"/>
     </div>
   </section>
 </template>
@@ -40,10 +40,11 @@
   import PageHead from '@/components/PageHead.vue';
   import FiltersButton from '@/components/FiltersButton.vue';
   import L from 'leaflet';
+  import VueRangeSlider from 'vue-range-component'
 
   export default {
     name: 'Home',
-    components: {Map, PageHead, FiltersButton},
+    components: {Map, PageHead, FiltersButton, VueRangeSlider},
     data() {
       return {
         actionsBarVisible: false,
@@ -51,7 +52,8 @@
           lat: 50.049679,
           lng: 19.947022
         },
-        poi: []
+        poi: [],
+        poiDensityFilterValue: 0
       };
     },
     watch: {
@@ -88,11 +90,18 @@
           console.log(e);
         }
       }
+    },
+    computed: {
+      filteredPoi() {
+        return this.poi.filter(p => p.density >= this.poiDensityFilterValue)
+      }
     }
   };
 </script>
 
 <style lang="scss">
+  @import "~vue-range-component/dist/vue-range-slider.css";
+
   .places {
     display: flex;
     flex-direction: column;
