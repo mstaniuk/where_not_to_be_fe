@@ -141,3 +141,14 @@
 button.btn {
   border: 0;
 }
+
+.cta-on-mobile {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .btn {
+    @include defineSize(36px);
+  }
+}

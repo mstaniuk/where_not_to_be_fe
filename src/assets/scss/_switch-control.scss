@@ -58,7 +58,7 @@
   @include defineSwitchColors(
     $color-lightblue,
     $color-navy
-    );
+  );
 
   &--blue {
     @include defineSwitchColors(
@@ -71,6 +71,6 @@
     @include defineSwitchColors(
       $color-salmon,
       $color-red
-        );
+    );
   }
 }
