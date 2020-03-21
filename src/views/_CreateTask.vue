@@ -30,7 +30,7 @@
         </router-link>
 
         <button class="btn btn--filled btn--red btn--small">
-          SAVE TASK
+          Save {{ type }}
         </button>
       </div>
 
@@ -63,10 +63,20 @@ export default {
     };
   },
 
+  computed: {
+    type() {
+      return this.is("task") || this.is("action");
+    }
+  },
+
   methods: {
     setActiveForm(formName) {
       console.log(formName);
       this.activeForm = formName;
+    },
+
+    is(type) {
+      return this.$route.path.includes(type) ? type : null;
     }
   }
 };
