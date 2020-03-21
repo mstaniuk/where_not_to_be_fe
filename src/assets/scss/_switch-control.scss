@@ -1,0 +1,76 @@
+@mixin defineSwitchColors($activeBg, $activeBtn) {
+  &.switch-control--active {
+    .switch-control__indicator {
+      background-color: $activeBg;
+    }
+
+    .switch-control__btn {
+      background-color: $activeBtn;
+    }
+  }
+}
+
+.switch-control {
+  min-height: 30px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+
+  &__indicator {
+    width: 36px;
+    height: 16px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: .1s ease-in;
+    background-color: $color-grey;
+    margin-right: 10px;
+  }
+
+  &__btn {
+    @include circle-shaped(24px);
+    @include dark-shadow;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    right: auto;
+    transform: translateY(-50%);
+    transition: left .2s ease-in, transform .2s ease-in;
+    background-color: $color-white;
+  }
+
+  &__label {
+    @include label-text-styles;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &--active {
+    .switch-control__btn {
+      left: 100%;
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  // default colors
+  @include defineSwitchColors(
+    $color-lightblue,
+    $color-navy
+    );
+
+  &--blue {
+    @include defineSwitchColors(
+      $color-lightblue,
+      $color-navy
+    );
+  }
+
+  &--red {
+    @include defineSwitchColors(
+      $color-salmon,
+      $color-red
+        );
+  }
+}

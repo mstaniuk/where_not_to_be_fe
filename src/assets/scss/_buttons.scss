@@ -85,6 +85,11 @@
   @include defineSize(36px);
   text-transform: uppercase;
 
+  &--disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+
   &--small {
     @include defineSize(28px);
   }
@@ -97,18 +102,18 @@
     @include defineFilled(
       $color-white,
       $color-navy, 
-      $color-salmon, 
+      $color-red, 
       $color-white
     );
   }
 
   &--red {
     @include defineContour(
-      $color-salmon, 
+      $color-red, 
       $color-white
     );
     @include defineFilled(
-      $color-salmon, 
+      $color-red, 
       $color-white, 
       $color-navy, 
       $color-white
@@ -123,7 +128,7 @@
     @include defineFilled(
       $color-navy,
       $color-white,
-      $color-salmon,
+      $color-red,
       $color-white
     );
   }

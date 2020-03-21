@@ -6,12 +6,14 @@
 
 $color-white: #fff;
 $color-lightgrey: #E8E8E8;
+$color-grey: #CBCBCB;
 $color-darkgrey: #535C52;
 $color-black: #000;
 
 $color-navy: #302B5C;
 $color-lightblue: #95B7DF;
-$color-salmon: #CC5B54;
+$color-red: #CC5B54;
+$color-salmon: #ECA58D;
 
 $topbar-height: 70px;
 $menu-btn-size: 40px;
@@ -25,9 +27,12 @@ $sidebar-width: 300px;
 @import "_bottom";
 @import "_buttons";
 @import "_card";
+@import "_ways-to-help";
 @import "_main-menu";
 @import "_map";
 @import "_page-head";
 @import "_popover";
+@import "_popover-create";
 @import "_side";
+@import "_switch-control";
 @import "_top-bar";
