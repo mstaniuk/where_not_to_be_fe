@@ -39,6 +39,23 @@ Vue.directive("outerclick", vClickOutside);
 
 // Global filters
 Vue.filter("percentage", value => `${parseFloat(value).toFixed(2)} %`);
+Vue.filter("date", value => {
+  if (value instanceof Date) {
+    const year = value.getFullYear();
+    const month = value.getMonth();
+    const day = value.getDate();
+    const hours = value.getHours();
+    const minutes = value.getMinutes();
+
+    const addZero = val => (val < 10 ? `0${val}` : val);
+
+    const date = `${year}-${addZero(month)}-${addZero(day)}`;
+
+    return `${date} ${hours}:${minutes}`;
+  }
+
+  return value;
+});
 
 Vue.config.productionTip = false;
 

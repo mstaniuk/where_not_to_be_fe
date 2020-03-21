@@ -1,0 +1,140 @@
+.notifications {
+  padding: 20px;
+
+  &__section-title {
+    color: $color-grey;
+    @include label-text-styles;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__item {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+
+    &--warning {
+      border: 1px solid lighten($color-yellow, 20%);
+      background-color: lighten($color-yellow, 40%);
+    }
+
+    &--important {
+      border: 1px solid lighten($color-red, 20%);
+      background-color: lighten($color-red, 40%);
+    }
+
+    &--info {
+      border: 1px solid lighten($color-lightblue, 10%);
+      background-color: lighten($color-lightblue, 40%);
+    }
+
+    &--success {
+      border: 1px solid lighten($color-green, 20%);
+      background-color: lighten($color-green, 70%);
+    }
+
+    &--default {
+      border: 1px solid lighten($color-grey, 10%);
+    }
+
+    &--old {
+      box-shadow: none;
+      border: 1px solid $color-lightgrey;
+      margin-bottom: 15px;
+
+      .notifications__text,
+      .notifications__meta {
+        opacity: .6;
+      }
+
+      .notifications__actions span:nth-of-type(1) {
+        color: $color-red;
+      }
+    }
+
+    &--warning,
+    &--important,
+    &--info,
+    &--success,
+    &--default {
+      border-left-width: 3px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      color: $color-navy;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 10px;
+      color: $color-darkgrey;
+    }
+  }
+
+  &__meta {
+    width: 100%;
+    order: 1;
+    @include label-text-styles;
+    margin-bottom: 10px;
+  }
+
+  &__actions {
+    width: 100%;
+    order: 3;
+    @include label-text-styles;
+    font-weight: bold;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      line-height: 24px;
+      cursor: pointer;
+
+      &:nth-of-type(1) {
+        color: $color-darkgrey;
+      }
+
+      &:nth-of-type(2) {
+        color: $color-red;
+      }        
+    }
+  }
+
+  @include media-query-lg-up {
+    padding: 20px 40px;
+
+    &--text,
+    &--meta,
+    &--actions {
+      order: 1;
+    }
+
+    &__text {
+      flex-basis: 50%;
+    }
+
+
+    &__meta {
+      flex-basis: 20%;
+      margin-bottom: 0;
+    }
+
+    &__actions {
+      flex-basis: 30%;
+    }
+  }
+}
