@@ -1,0 +1,41 @@
+.tab-menu {
+  background-color: $color-lightgrey;
+  padding: 15px 30px 0 20px;
+  position: relative;
+
+  &__title {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+    color: $color-navy;
+    margin-bottom: 15px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  &__items {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__item {
+    padding: 10px;
+    cursor: pointer;
+    @include label-text-styles;
+    transition: .3s ease-in;
+
+    &--active {
+      padding: 12px 15px 8px;
+      font-weight: bold;
+      background-color: $color-white;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  }
+}

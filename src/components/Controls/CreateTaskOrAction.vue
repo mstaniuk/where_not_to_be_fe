@@ -7,7 +7,7 @@
     }"
   >
     <button
-      v-if="isMobile || !isCreating"
+      v-if="!isCreating"
       :class="[
         'btn btn--filled btn--red btn--small',
         arrowClass,
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import PopoverCreate from "@/components/PopoverCreate.vue";
+import PopoverCreate from "@/components/Controls/_PopoverCreate.vue";
 
 export default {
   name: "CreateTaskOrAction",
