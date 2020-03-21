@@ -1,0 +1,92 @@
+.instructions {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.numbers-of-infected,
+.market-loss {
+  padding-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .value {
+    font-weight: bold;
+  }
+
+  &--total {
+    text-align: center;
+    width: 100%;
+    color: $color-red;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $color-lightgrey;
+
+    .value {
+      font-size: 50px;
+      line-height: 60px;
+    }
+
+    .label {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &--cured,
+  &--deaths {
+    width: 50%;
+    margin-top: 10px;
+
+    .value {
+      font-size: 28px;
+      line-height: 40px;
+
+      .percentage {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    .label {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &--cured {
+    padding-right: 20px;
+    color: $color-green;
+  }
+
+  &--deaths {
+    padding-left: 10px;
+    color: $color-darkgrey;
+  }
+
+  .card__footer {
+    width: 100%;
+    margin-left: 0px;
+    text-align: center;
+    padding: 15px 0;
+  }
+}
+
+.market-loss {
+  &--total {
+    color: $color-darkgrey;
+    border-bottom: 0;
+  }
+}
+
+.call-help {
+  text-align: center;
+  background-color: $color-navy;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &__question {
+    color: $color-white;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+}
