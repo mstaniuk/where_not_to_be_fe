@@ -7,7 +7,7 @@
     }"
   >
     <button
-      v-if="isMobile || !isCreating"
+      v-if="!isCreating"
       :class="[
         'btn btn--filled btn--red btn--small',
         arrowClass,
