@@ -50,7 +50,8 @@ export default {
 
   computed: {
     activeLink() {
-      return this.menu.find(i => i.path === this.$route.path);
+      const isInMenu = this.menu.find(i => i.path === this.$route.path);
+      return isInMenu || { path: null };
     }
   }
 };

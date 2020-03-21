@@ -10,6 +10,8 @@ import httpClientFactory from "@/utils/httpClientFactory";
 import apiServiceFactory from "@/utils/apiServiceFactory";
 import viewportMixin from "@/utils/viewportMixin";
 
+import Card from "@/components/Card";
+
 // Leaflet configuration
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
@@ -29,6 +31,7 @@ Vue.mixin(viewportMixin);
 
 // Global components
 Vue.component("apexchart", VueApexCharts);
+Vue.component("card", Card);
 
 Vue.config.productionTip = false;
 

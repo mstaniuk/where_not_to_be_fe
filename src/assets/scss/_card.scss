@@ -1,0 +1,48 @@
+.card {
+  @include soft-shadow;
+  border-radius: 8px;
+  background-color: $color-white;
+  padding: 20px;
+  margin: 20px 0;
+  overflow: hidden;
+  
+  &__header {
+    margin: -20px -20px 20px;
+    padding: 20px 20px 15px;
+    color: $color-navy;
+    border-bottom: 1px solid $color-lightgrey;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: bold;
+
+    &--red {
+      border-top: 0;
+      background-color: $color-salmon;
+      color: $color-white;
+    }
+  }
+
+  &__chart-title {
+    text-align: center;
+    font-weight: bold;
+    color: $color-navy;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  
+  &__footer {
+    margin: 20px -20px -20px;
+    padding: 20px 20px 15px;
+    font-size: 12px;
+    border-top: 1px solid $color-lightgrey;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &--blue {
+      border-top: 0;
+      background-color: $color-lightblue;
+      color: $color-white;
+    }
+  }
+}

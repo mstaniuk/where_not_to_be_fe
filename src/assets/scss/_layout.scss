@@ -5,6 +5,7 @@
   @include media-query-lg-up {
     flex: 1 1 100%;
     padding-top: 0;
+    padding-left: $sidebar-width;
   }
 }
   
@@ -31,7 +32,6 @@
   }
   
   @include media-query-lg-up {
-    position: relative;
     flex: 0 0 $sidebar-width;
     height: 100vh;
     top: 0;

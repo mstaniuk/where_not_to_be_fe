@@ -17,6 +17,10 @@
 @mixin dark-shadow ($x: 0, $y: 8px) {
   box-shadow: #{$x} #{$y} 17px 0 rgba($color-black, .15);
 }
+
+@mixin soft-shadow ($x: 0, $y: 5px) {
+  box-shadow: #{$x} #{$y} 12px 0 rgba($color-black, .08);
+}
   
 @mixin arrow-down($color) {
   &::before {
