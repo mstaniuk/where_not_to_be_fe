@@ -6,7 +6,7 @@
         This type of action is for finding help in daily stuff like shopping,
         taking dog for a walk or bring some food.
       </p>
-      <router-link class="popover-create__btn" :to="{ path: '/create-task' }">
+      <router-link class="popover-create__btn" :to="{ path: '/help/new-task' }">
         <i class="icon icon-plus" />
       </router-link>
     </div>
@@ -17,7 +17,10 @@
         You can organize some charity actions like making masks, delivering food
         or something. Find the team!
       </p>
-      <router-link class="popover-create__btn" :to="{ path: '/create-action' }">
+      <router-link
+        class="popover-create__btn"
+        :to="{ path: '/help/new-action' }"
+      >
         <i class="icon icon-plus" />
       </router-link>
     </div>

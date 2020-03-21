@@ -14,10 +14,12 @@
       <template v-slot:buttons>
         <div v-outerclick="hidePopover">
           <button
+            v-if="isMobile || !isCreating"
             :class="[
               'btn btn--filled btn--red btn--small ml-15',
               showPopover ? 'btn--arrow-up' : 'btn--arrow-down',
-              isMobile ? 'mr-50' : ''
+              isMobile ? 'mr-50' : '',
+              isCreating ? 'btn--disabled' : ''
             ]"
             @click="showPopover = !showPopover"
           >
@@ -28,6 +30,8 @@
         </div>
       </template>
     </PageHead>
+
+    <router-view />
   </section>
 </template>
 
@@ -44,6 +48,18 @@ export default {
     return {
       showPopover: false
     };
+  },
+
+  computed: {
+    isCreating() {
+      return ["/help/new-task", "/help/new-action"].includes(this.$route.path);
+    }
+  },
+
+  watch: {
+    $route() {
+      this.showPopover = false;
+    }
   },
 
   methods: {

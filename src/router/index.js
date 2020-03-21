@@ -6,6 +6,10 @@ import CrowdedPlaces from "@/views/CrowdedPlaces";
 import OfficialInformation from "@/views/OfficialInformation";
 import WaysToHelp from "@/views/WaysToHelp";
 
+import CreateAction from "@/views/_CreateAction";
+import CreateTask from "@/views/_CreateTask";
+import HelpMap from "@/views/_HelpMap";
+
 import Notifications from "@/views/Notifications";
 import Statistics from "@/views/Statistics";
 import Settings from "@/views/Settings";
@@ -28,7 +32,24 @@ const routes = [
   {
     path: "/help",
     name: "Ways to help",
-    component: WaysToHelp
+    component: WaysToHelp,
+    children: [
+      {
+        path: "",
+        name: "Actions map",
+        component: HelpMap
+      },
+      {
+        path: "new-task",
+        name: "Create task",
+        component: CreateTask
+      },
+      {
+        path: "new-action",
+        name: "Create action",
+        component: CreateAction
+      }
+    ]
   },
   {
     path: "/advertising",

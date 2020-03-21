@@ -85,6 +85,11 @@
   @include defineSize(36px);
   text-transform: uppercase;
 
+  &--disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+
   &--small {
     @include defineSize(28px);
   }
