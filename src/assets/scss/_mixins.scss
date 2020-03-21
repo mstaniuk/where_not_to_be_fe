@@ -21,6 +21,13 @@
 @mixin soft-shadow ($x: 0, $y: 5px) {
   box-shadow: #{$x} #{$y} 12px 0 rgba($color-black, .08);
 }
+
+@mixin label-text-styles {
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
   
 @mixin arrow-down($color) {
   &::before {

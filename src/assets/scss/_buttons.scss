@@ -102,18 +102,18 @@
     @include defineFilled(
       $color-white,
       $color-navy, 
-      $color-salmon, 
+      $color-red, 
       $color-white
     );
   }
 
   &--red {
     @include defineContour(
-      $color-salmon, 
+      $color-red, 
       $color-white
     );
     @include defineFilled(
-      $color-salmon, 
+      $color-red, 
       $color-white, 
       $color-navy, 
       $color-white
@@ -128,7 +128,7 @@
     @include defineFilled(
       $color-navy,
       $color-white,
-      $color-salmon,
+      $color-red,
       $color-white
     );
   }

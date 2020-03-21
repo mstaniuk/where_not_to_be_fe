@@ -62,14 +62,14 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%);
-    background-color: $color-salmon;
+    background-color: $color-red;
     @include indicatorAnimation(firstCircle, .3s);
 
     &::before,
     &::after {
       content: "";
       display: block;
-      background-color: rgba($color-salmon, .2);
+      background-color: rgba($color-red, .2);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -119,14 +119,14 @@
       bottom: 0;
       left: 50%;
       transform: translate(-50%, 50%);
-      background-color: $color-salmon;
+      background-color: $color-red;
       @include indicatorAnimation(firstCircle, .3s);
   
       &::before,
       &::after {
         content: "";
         display: block;
-        background-color: rgba($color-salmon, .2);
+        background-color: rgba($color-red, .2);
         position: absolute;
         top: 50%;
         left: 50%;
