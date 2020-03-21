@@ -1,5 +1,5 @@
 <template>
-  <popover class="popover-create" :position="['right', 'top']">
+  <popover class="popover-create" :position="position">
     <div class="popover-create__option">
       <h3 class="brygada">Single task</h3>
       <p>
@@ -33,6 +33,12 @@ import Popover from "@/components/Popover.vue";
 export default {
   name: "PopoverCreate",
 
-  components: { Popover }
+  components: { Popover },
+
+  computed: {
+    position() {
+      return this.windowWidth > 768 ? ["right", "top"] : ["center", "bottom"];
+    }
+  }
 };
 </script>

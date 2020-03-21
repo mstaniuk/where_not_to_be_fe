@@ -7,6 +7,7 @@
   line-height: 16px;
   border-radius: 10px;
   min-width: 180px;
+  z-index: 2001;
   @include dark-shadow(0, 3px);
 
   &::after {
@@ -29,6 +30,16 @@
     }
   }
 
+  &[class$="-bottom"] {
+    bottom: 100%;
+    margin-bottom: 20px;
+
+    &::after {
+      top: 100%;
+      margin-top: -13px;
+    }
+  }
+
   &[class*="--right-"] {
     right: 10px;
 
@@ -37,6 +48,10 @@
       background-image: url('~@/assets/images/popover-left.svg');
       background-position-x: left;
       transform: rotate(180deg);
+    }
+
+    &[class$="-bottom"]::after {
+      transform: none;
     }
   }
 
@@ -49,6 +64,10 @@
       background-position-x: right;
       transform: rotate(180deg);
     }
+
+    &[class$="-bottom"]::after {
+      transform: none;
+    }
   }
 
   &[class*="--center-"] {
@@ -60,6 +79,10 @@
       background-image: url('~@/assets/images/popover-center.svg');
       background-position-x: center;
       transform: translateX(-50%) rotate(180deg);
+    }
+
+    &[class$="-bottom"]::after {
+      transform: translateX(-50%);
     }
   }
 }

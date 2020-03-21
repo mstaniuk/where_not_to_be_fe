@@ -12,22 +12,7 @@
       </template>
 
       <template v-slot:buttons>
-        <div v-outerclick="hidePopover">
-          <button
-            v-if="isMobile || !isCreating"
-            :class="[
-              'btn btn--filled btn--red btn--small ml-15',
-              showPopover ? 'btn--arrow-up' : 'btn--arrow-down',
-              isMobile ? 'mr-50' : '',
-              isCreating ? 'btn--disabled' : ''
-            ]"
-            @click="showPopover = !showPopover"
-          >
-            Create new
-          </button>
-
-          <popover-create v-if="showPopover" />
-        </div>
+        <CreateTaskOrAction />
       </template>
     </PageHead>
 
@@ -37,12 +22,12 @@
 
 <script>
 import PageHead from "@/components/PageHead.vue";
-import PopoverCreate from "@/components/PopoverCreate.vue";
+import CreateTaskOrAction from "@/components/CreateTaskOrAction.vue";
 
 export default {
   name: "WaysToHelp",
 
-  components: { PageHead, PopoverCreate },
+  components: { CreateTaskOrAction, PageHead },
 
   data() {
     return {
