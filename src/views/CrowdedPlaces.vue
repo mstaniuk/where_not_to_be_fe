@@ -13,7 +13,7 @@
     </PageHead>
     <div class="places__actions">
       <div class="places__action">
-        <Search/>
+<!--        <Search/>-->
       </div>
       <div class="places__action">
         <FiltersButton @click.native="searchClickHandler"/>

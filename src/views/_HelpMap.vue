@@ -11,20 +11,20 @@
     </div>
 
     <div class="help-map">
-      <Map :poi="poi" :position="position" @moved="onMovedHandler" />
+      <WMap :points="points" :position="position" @moved="onMovedHandler" />
     </div>
   </div>
 </template>
 
 <script>
 import SwitchControl from "@/components/Controls/SwitchControl";
-import Map from "@/components/Map.vue";
+import WMap from "@/components/WaysToHelpMap.vue";
 import L from "leaflet";
 
 export default {
   name: "HelpMap",
 
-  components: { Map, SwitchControl },
+  components: { WMap, SwitchControl },
 
   data() {
     return {
@@ -34,14 +34,30 @@ export default {
         lat: 50.049679,
         lng: 19.947022
       },
-      poi: []
+      points: []
     };
   },
 
   methods: {
     onMovedHandler(ev) {
       this.position = ev.target.getCenter();
+      this.handleApi();
+    },
+    async handleApi() {
+      const response = await this.$api.helpRequestsByMapCenter(this.position);
+      this.points = response.data.map(r => ({
+        type: r.request_type,
+        unit: r.unit,
+        title: r.title,
+        description: r.description,
+        latLng: L.latLng(r.lat, r.lng)
+      }));
+      console.log(this.points);
     }
+  },
+
+  async mounted() {
+    this.handleApi();
   }
 };
 </script>

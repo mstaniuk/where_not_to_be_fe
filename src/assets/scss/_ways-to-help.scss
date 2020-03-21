@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  padding-bottom: 0;
+  height: calc(100% - 70px);
 
   &__content {
     width: 100%;
@@ -13,8 +15,4 @@
 .help-map {
   width: 100%;
   height: 100%;
-
-  .map {
-    min-height: 300px;
-  }
 }

@@ -4,6 +4,8 @@ export default (httpClient, { baseUrl }) => {
     "/users/{uid}/nearby_users?max_distance={max_dist}";
   const POI_BY_MAP_ENDPOINT =
     "/map_center/point_of_interests?max_distance={max_dist}&map_center_lat={lat}&map_center_lng={lng}";
+  const HR_BY_MAP_ENDPOINT =
+    "/help_requests/nearby?max_distance={max_dist}&lat={lat}&lng={lng}";
 
   return {
     getPoiByUserId(userId) {
@@ -23,6 +25,14 @@ export default (httpClient, { baseUrl }) => {
       const endpoint = POI_BY_MAP_ENDPOINT.replace("{max_dist}", maxDistance)
         .replace("{lat}", lat)
         .replace("{lng}", lng);
+
+      return httpClient.get(baseUrl + endpoint);
+    },
+
+    helpRequestsByMapCenter({lat, lng}, maxDistance = 170) {
+      const endpoint = HR_BY_MAP_ENDPOINT.replace("{max_dist}", maxDistance)
+      .replace("{lat}", lat)
+      .replace("{lng}", lng);
 
       return httpClient.get(baseUrl + endpoint);
     }
