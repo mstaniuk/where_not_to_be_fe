@@ -1,32 +1,103 @@
+@mixin defineContour($color1, $color2) {
+  &.btn--contour {
+    box-shadow: 0 0 0 2px $color1;
+    color: $color1;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $color1;
+      color: $color2;
+    }
+  }
+}
+
+@mixin defineFilled(
+  $fillColor,
+  $textColor,
+  $fillHoverColor,
+  $textHoverColor
+) {
+  &.btn--filled {
+    box-shadow: 0 5px 17px 0 rgba($fillColor, .15);
+    color: $textColor;
+    background-color: $fillColor;
+
+    &:hover {
+      background-color: $fillHoverColor;
+      box-shadow: 0 5px 17px 0 rgba($fillHoverColor, .15);
+    }
+  }
+}
+
+@mixin defineSize($size) {
+  font-size: (7/9) * ($size/2);
+  line-height: $size;
+  height: $size;
+  border-radius: $size/2;
+  padding: 0 ($size/2);
+  letter-spacing: (1/9) * ($size/2);
+}
+
 .btn {
   display: inline-block;
-  font-size: 14px;
-  line-height: 36px;
-  height: 36px;
-  border-radius: 18px;
-  padding: 0 18px;
   font-weight: bolder;
-  letter-spacing: 2px;
   text-decoration: none;
   box-sizing: border-box;
   text-align: center;
   transition: .2s ease-in;
+  cursor: pointer;
+  min-width: 120px;
+  @include defineSize(36px);
+  text-transform: uppercase;
 
-  &--white {
-    color: white;
+  &--small {
+    @include defineSize(28px);
   }
 
-  &--contour {
-    box-shadow: 0 0 0 2px $color-white;
-    color: $color-white;
+  &--white {
+    @include defineContour(
+      $color-white,
+      $color-navy
+    );
+    @include defineFilled(
+      $color-white,
+      $color-navy, 
+      $color-salmon, 
+      $color-white
+    );
+  }
 
-    &:hover {
-      background-color: $color-white;
-      color: $color-navy;
-    }
+  &--red {
+    @include defineContour(
+      $color-salmon, 
+      $color-white
+    );
+    @include defineFilled(
+      $color-salmon, 
+      $color-white, 
+      $color-navy, 
+      $color-white
+    );
+  }
+
+  &--navy {
+    @include defineContour(
+      $color-navy,
+      $color-white
+    );
+    @include defineFilled(
+      $color-navy,
+      $color-white,
+      $color-salmon,
+      $color-white
+    );
   }
 
   &--fullwidth {
     width: 100%;
   }
+}
+
+button.btn {
+  border: 0;
 }
