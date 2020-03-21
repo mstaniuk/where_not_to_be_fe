@@ -37,6 +37,9 @@ Vue.component("card", Card);
 // Global directives
 Vue.directive("outerclick", vClickOutside);
 
+// Global filters
+Vue.filter("percentage", value => `${parseFloat(value).toFixed(2)} %`);
+
 Vue.config.productionTip = false;
 
 new Vue({

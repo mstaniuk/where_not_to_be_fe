@@ -23,10 +23,11 @@ $sidebar-width: 300px;
 @import "_global";
 @import "_layout";
 @import "_margins";
+@import "_card";
 
+@import "_blocks";
 @import "_bottom";
 @import "_buttons";
-@import "_card";
 @import "_create-task";
 @import "_form";
 @import "_main-menu";
