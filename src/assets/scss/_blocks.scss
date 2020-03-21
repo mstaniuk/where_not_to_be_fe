@@ -1,27 +1,27 @@
 .instructions {
-    font-size: 14px;
-    line-height: 22px;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .numbers-of-infected {
-    padding-top: 35px;
+  padding-top: 35px;
 
-    &--total {
-        text-align: center;
-        width: 100%;
-        color: $color-red;
-        padding-bottom: 15px;
-        border-bottom: 1px solid $color-lightgrey;
+  &--total {
+    text-align: center;
+    width: 100%;
+    color: $color-red;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $color-lightgrey;
 
-        .value {
-            font-size: 50px;
-            line-height: 60px;
-            font-weight: bold;
-        }
-
-        .label {
-            font-size: 24px;
-            line-height: 30px;
-        }
+    .value {
+      font-size: 50px;
+      line-height: 60px;
+      font-weight: bold;
     }
+
+    .label {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
 }
