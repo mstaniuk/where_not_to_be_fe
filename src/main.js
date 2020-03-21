@@ -23,7 +23,7 @@ Icon.Default.mergeOptions({
 
 // API configuration
 const apiService = apiServiceFactory(httpClientFactory(), {
-  baseUrl: "http://avoidly-api.herokuapp.com"
+  baseUrl: "https://avoidly-api.herokuapp.com"
 });
 Vue.prototype.$api = apiService;
 
