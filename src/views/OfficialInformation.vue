@@ -12,16 +12,33 @@
       </template>
     </PageHead>
 
-    <div class="page__content">
-      <chart-of-infected />
+    <div class="page__content official-info">
+      <template v-if="!isMobile">
+        <div class="official-info__left">
+          <chart-of-infected />
 
-      <instructions />
+          <instructions />
+        </div>
+        <div class="official-info__right">
+          <numbers-of-infected />
 
-      <numbers-of-infected />
+          <market-loss />
 
-      <market-loss />
+          <call-for-help />
+        </div>
+      </template>
 
-      <call-for-help />
+      <template v-else>
+        <chart-of-infected />
+
+        <numbers-of-infected />
+
+        <call-for-help />
+
+        <instructions />
+
+        <market-loss />
+      </template>
     </div>
   </section>
 </template>
