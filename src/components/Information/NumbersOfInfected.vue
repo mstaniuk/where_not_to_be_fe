@@ -6,20 +6,28 @@
     </div>
 
     <div class="numbers-of-infected--cured">
-      <div class="value">{{ values.cured }}</div>
+      <div class="value">
+        {{ values.cured }}
+        <span class="percentage"> ({{ percentage.cured | percentage }}) </span>
+      </div>
       <div class="label">
         cured
-        <span class="percentage"> ({{ percentage.cured | percentage }}) </span>
       </div>
     </div>
 
     <div class="numbers-of-infected--deaths">
-      <div class="value">{{ values.deaths }}</div>
-      <div class="label">
-        deaths
+      <div class="value">
+        {{ values.deaths }}
         <span class="percentage"> ({{ percentage.deaths | percentage }}) </span>
       </div>
+      <div class="label">
+        deaths
+      </div>
     </div>
+
+    <template v-slot:footer>
+      POLAND, 20.03.2020
+    </template>
   </card>
 </template>
 
