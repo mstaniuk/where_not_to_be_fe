@@ -16,7 +16,10 @@
         <!--        <Search/>-->
       </div>
       <div class="places__action">
-        <FiltersButton @click.native="searchClickHandler" />
+        <FiltersButton
+          :active="actionsBarVisible"
+          @click.native="searchClickHandler"
+        />
       </div>
 
       <div
@@ -38,7 +41,7 @@
 <script>
 import Map from "@/components/Map.vue";
 import PageHead from "@/components/PageHead.vue";
-import FiltersButton from "@/components/FiltersButton.vue";
+import FiltersButton from "@/components/Controls/FiltersButton.vue";
 import L from "leaflet";
 import VueRangeSlider from "vue-range-component";
 
@@ -155,6 +158,7 @@ export default {
     visibility: hidden;
     pointer-events: none;
     transform-origin: top;
+    padding: 0 40px 10px;
 
     &--visible {
       transition: transform 250ms ease-in-out;
