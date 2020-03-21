@@ -1,13 +1,13 @@
 <template>
   <form class="form location-form">
-    <FormMap type="single"/>
+    <FormMap type="single" />
   </form>
 </template>
 
 <script>
-import FormMap from '@/components/FormMap.vue'
+import FormMap from "@/components/FormMap.vue";
 export default {
   name: "LocationForm",
-  components: {FormMap}
+  components: { FormMap }
 };
 </script>

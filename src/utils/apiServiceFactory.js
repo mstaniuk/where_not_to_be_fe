@@ -29,10 +29,10 @@ export default (httpClient, { baseUrl }) => {
       return httpClient.get(baseUrl + endpoint);
     },
 
-    helpRequestsByMapCenter({lat, lng}, maxDistance = 170) {
+    helpRequestsByMapCenter({ lat, lng }, maxDistance = 170) {
       const endpoint = HR_BY_MAP_ENDPOINT.replace("{max_dist}", maxDistance)
-      .replace("{lat}", lat)
-      .replace("{lng}", lng);
+        .replace("{lat}", lat)
+        .replace("{lng}", lng);
 
       return httpClient.get(baseUrl + endpoint);
     }

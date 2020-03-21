@@ -11,7 +11,11 @@
     </div>
 
     <div class="help-map">
-      <WMap :points="filteredPoints" :position="position" @moved="onMovedHandler" />
+      <WMap
+        :points="filteredPoints"
+        :position="position"
+        @moved="onMovedHandler"
+      />
     </div>
   </div>
 </template>
@@ -37,6 +41,19 @@ export default {
       points: []
     };
   },
+  computed: {
+    filteredPoints() {
+      return this.points.filter(
+        p =>
+          (p.type === "crowd" && this.showActions) ||
+          (p.type === "single" && this.showTasks)
+      );
+    }
+  },
+
+  async mounted() {
+    this.handleApi();
+  },
 
   methods: {
     onMovedHandler(ev) {
@@ -53,18 +70,6 @@ export default {
         latLng: L.latLng(r.lat, r.lng)
       }));
     }
-  },
-  computed: {
-    filteredPoints() {
-      return this.points.filter(p =>
-        p.type === 'crowd' && this.showActions ||
-        p.type === 'single' && this.showTasks
-      )
-    }
-  },
-
-  async mounted() {
-    this.handleApi();
   }
 };
 </script>
