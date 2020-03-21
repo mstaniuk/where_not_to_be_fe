@@ -4,7 +4,13 @@
       Total number of infected
     </template>
 
-    <apexchart width="100%" type="line" :options="options" :series="series" />
+    <apexchart
+      width="100%"
+      height="250"
+      type="line"
+      :options="options"
+      :series="series"
+    />
 
     <template v-slot:footer>
       Footer
@@ -23,13 +29,13 @@ export default {
           id: "vuechart-example"
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+          categories: ["01-2020", "02-2020", "03-2020", "04-2020", "05-2020"]
         }
       },
       series: [
         {
-          name: "series-1",
-          data: [30, 40, 45, 50, 49, 60, 70, 91]
+          name: "Confirmed infections",
+          data: [3, 12, 45, 82, 157]
         }
       ]
     };
