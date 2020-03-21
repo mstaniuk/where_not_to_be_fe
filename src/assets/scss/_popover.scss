@@ -17,7 +17,6 @@
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
-    // background-color: $color-navy;
   }
 
   &[class$="-top"] {
@@ -51,7 +50,9 @@
     }
 
     &[class$="-bottom"]::after {
+      background-image: url('~@/assets/images/popover-right.svg');
       transform: none;
+      background-position-x: right;
     }
   }
 
