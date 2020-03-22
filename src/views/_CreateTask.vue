@@ -71,7 +71,6 @@ export default {
 
   methods: {
     setActiveForm(formName) {
-      console.log(formName);
       this.activeForm = formName;
     },
 

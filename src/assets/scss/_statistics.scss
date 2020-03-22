@@ -1,0 +1,34 @@
+.statistics {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  &__adscore {
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      font-weight: bold;
+      color: $color-lightblue;
+      font-size: 32px;
+      line-height: 48px;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    max-width: 450px;
+
+    &--activity {
+      background-image: url('~@/assets/images/trophy.svg');
+      background-repeat: no-repeat;
+      background-size: 60%;
+      background-position: 140%;
+    }
+  }
+
+  @include media-query-lg-up {
+    padding: 25px 40px;
+  }
+}
