@@ -35,3 +35,15 @@ The __Avoidly__ app was done during [__Hack The Crisis__](https://www.hackcrisis
 - __Grzegorz M.__ ([@ToTenMilan](https://github.com/ToTenMilan)) - backend development, project presentation and documentation
 - __Mateusz S.__ ([@mstaniuk](https://github.com/mstaniuk)) - frontend development
 
+
+### Screenshots:
+
+![Login page](https://imgur.com/sofpGwo.png)
+
+![Statistics page](https://imgur.com/FWQZQHA.png)
+
+![Crowded Places page](https://imgur.com/nol3Cv0.png)
+
+![Official Information page](https://imgur.com/lLYAOyg.png)
+
+![Ways To Help page](https://imgur.com/h4J7UEf.png)

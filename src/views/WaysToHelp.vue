@@ -5,10 +5,9 @@
         Ways to help
       </template>
       <template v-slot:text>
-        Here is the map with some density indicators which should help you
-        <br />
-        to avoid crowdy places. It's really important -
-        <a href="#">read why</a>
+        Use the form below to report your needs.
+        <br />It can even be everyday activities such as shopping or walking the
+        dog.
       </template>
 
       <template v-slot:buttons>
