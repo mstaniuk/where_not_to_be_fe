@@ -1,5 +1,5 @@
 <template>
-  <div class="map" :class="{'map--opened': activePointIndex !== null}">
+  <div class="map" :class="{ 'map--opened': activePointIndex !== null }">
     <LMap ref="map" class="map__map" :zoom="zoom" :center="currentPosition">
       <l-tile-layer :url="url" :attribution="attribution" />
       <l-marker
@@ -11,8 +11,12 @@
       />
     </LMap>
 
-    <section v-if="activePointIndex !== null" class="map__popup map-popup" :class="'map-popup--' + activePoint.type">
-      <button @click="resetActivePoint" class="map-popup__close">
+    <section
+      v-if="activePointIndex !== null"
+      class="map__popup map-popup"
+      :class="'map-popup--' + activePoint.type"
+    >
+      <button class="map-popup__close" @click="resetActivePoint">
         <i class="icon icon-close" />
       </button>
       <header class="map-popup__header">
@@ -24,14 +28,15 @@
         <div v-if="activePoint.target">
           <div class="map-popup__target-label">Target</div>
           <div class="map-popup__target">
-            {{activePoint.target}} {{activePoint.unit}}
+            {{ activePoint.target }} {{ activePoint.unit }}
           </div>
         </div>
 
         <div v-if="activePoint.time.from && activePoint.time.to">
           <div class="map-popup__target-label">Preferred time</div>
           <div class="map-popup__target">
-            {{timeFormatter(activePoint.time.from)}} - {{timeFormatter(activePoint.time.to)}}
+            {{ timeFormatter(activePoint.time.from) }} -
+            {{ timeFormatter(activePoint.time.to) }}
           </div>
         </div>
 
@@ -40,9 +45,11 @@
             class="btn btn--filled"
             :class="{
               'btn--red': activePoint.type === 'crowd',
-              'btn--navy': activePoint.type === 'single',
+              'btn--navy': activePoint.type === 'single'
             }"
-          >Help</button>
+          >
+            Help
+          </button>
         </div>
       </div>
 
@@ -118,7 +125,7 @@ export default {
           iconAnchor: [32, 64], // point of the icon which will correspond to marker's location
           shadowAnchor: [0, 0], // the same for the shadow
           popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
-        }),
+        })
       },
       zoom: 18,
       url:
@@ -133,36 +140,7 @@ export default {
       return L.latLng(this.position.lat, this.position.lng);
     },
     activePoint() {
-      return this.points[this.activePointIndex]
-    },
-  },
-  methods: {
-    timeFormatter(date) {
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      return new Intl.DateTimeFormat('en-GB').format(date)
-    },
-    markerClickHandler(index) {
-      if(this.activePointIndex === index) {
-        this.activePointIndex = null;
-      } else {
-        this.activePointIndex = index
-      }
-    },
-    getPointIcon(point, index) {
-      if(point.type === 'single') {
-        if(this.activePointIndex === index) {
-          return this.icons.activeBlue
-        }
-        return this.icons.blue
-      }
-
-      if(this.activePointIndex === index) {
-        return this.icons.activeRed;
-      }
-      return this.icons.red
-    },
-    resetActivePoint() {
-      this.activePointIndex = null;
+      return this.points[this.activePointIndex];
     }
   },
   mounted() {
@@ -171,6 +149,40 @@ export default {
         this.$emit("moved", ev);
       });
     });
+  },
+  methods: {
+    timeFormatter(date) {
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      };
+      return new Intl.DateTimeFormat("en-GB").format(date);
+    },
+    markerClickHandler(index) {
+      if (this.activePointIndex === index) {
+        this.activePointIndex = null;
+      } else {
+        this.activePointIndex = index;
+      }
+    },
+    getPointIcon(point, index) {
+      if (point.type === "single") {
+        if (this.activePointIndex === index) {
+          return this.icons.activeBlue;
+        }
+        return this.icons.blue;
+      }
+
+      if (this.activePointIndex === index) {
+        return this.icons.activeRed;
+      }
+      return this.icons.red;
+    },
+    resetActivePoint() {
+      this.activePointIndex = null;
+    }
   }
 };
 </script>
