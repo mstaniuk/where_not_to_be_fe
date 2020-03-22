@@ -258,7 +258,6 @@ export default {
 
     #{$root}--single & {
       background-color: $color-lightblue;
-      justify-content: flex-end;
     }
   }
 

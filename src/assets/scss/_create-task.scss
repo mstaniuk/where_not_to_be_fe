@@ -1,13 +1,20 @@
 .create-task {
-  &__description,
-  &__location {
+  height: 100%;
+
+  &__description {
     padding: 25px;
+  }
+
+  &__location {
+    padding: 0;
+    height: 100%;
   }
 
   @include media-query-lg-up {
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 100%;
+    height: auto;
 
     &__description,
     &__location {
@@ -19,9 +26,7 @@
     }
 
     &__location {
-      padding: 0;
       background-color: $color-grey;
-      height: 100%;
     }
 
     &__adjustment {
