@@ -1,3 +1,5 @@
+import L from "leaflet";
+
 export default {
   data() {
     return {
@@ -9,6 +11,10 @@ export default {
   computed: {
     isMobile() {
       return this.windowWidth < 1200;
+    },
+
+    isMobileBrowser() {
+      return !!L.Browser.mobile;
     }
   },
 
