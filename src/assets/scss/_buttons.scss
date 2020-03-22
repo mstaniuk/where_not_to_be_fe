@@ -133,6 +133,19 @@
     );
   }
 
+  &--blue {
+    @include defineContour(
+      $color-lightblue,
+      $color-white
+    );
+    @include defineFilled(
+      $color-lightblue,
+      $color-white,
+      $color-navy,
+      $color-white
+    );
+  }
+
   &--fullwidth {
     width: 100%;
   }

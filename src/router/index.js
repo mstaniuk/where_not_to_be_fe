@@ -12,7 +12,7 @@ import HelpMap from "@/views/_HelpMap";
 import Notifications from "@/views/Notifications";
 import Statistics from "@/views/Statistics";
 import Settings from "@/views/Settings";
-import Logout from "@/views/Logout";
+import Login from "@/views/Login";
 
 Vue.use(VueRouter);
 
@@ -22,6 +22,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: CrowdedPlaces
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login
   },
   {
     path: "/information",
@@ -69,11 +74,6 @@ const routes = [
     path: "/settings",
     name: "Settings",
     component: Settings
-  },
-  {
-    path: "/logout",
-    name: "Logout",
-    component: Logout
   }
 ];
 

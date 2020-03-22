@@ -1,0 +1,131 @@
+.login {
+  width: 100%;
+  display: flex;
+
+  &__main {
+    background-size: cover;
+    background-position: center;
+    background-image: url('~@/assets/images/login-bg-left.svg');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    width: 100vw;
+  }
+
+  &__app-logo {
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+
+  &__form {
+    color: $color-navy;
+    padding: 30px;
+    max-width: 420px;
+
+    h2 {
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+        
+    p {
+      font-size: 12px;
+      line-height: 20px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid $color-lightgrey;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form-field {
+    margin: 25px 0;
+  }
+
+  a.btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  @include media-query-md-up {
+    &__main {
+      width: 50vw;
+    }
+
+    &__app-logo {
+      height: 64px;
+      width: auto;
+    }
+
+    &__form {
+      transform: translateX(50%);
+    }
+
+    &__illustration {
+      display: block;
+      width: 50vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-image: url('~@/assets/images/login-bg-right.svg');
+    }
+  }
+
+  @include media-query-lg-up {
+    &__form {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+      padding: 40px;
+
+      h2,
+      p {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 30px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &__fields {
+      width: 60%;
+    }
+
+    &__buttons {
+      width: 40%;
+    }
+
+    &__buttons {
+      padding-left: 20px;
+    }
+
+    a.btn {
+      margin-top: 42px;
+      height: 50px;
+      border-radius: 25px;
+      line-height: 50px;
+    }
+
+    button {
+      margin-top: 12px;
+      height: 40px;
+      border-radius: 20px;
+    }
+  }
+}
