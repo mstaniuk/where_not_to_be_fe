@@ -158,6 +158,8 @@ export default {
         month: "long",
         day: "numeric"
       };
+      if (!date instanceof Date || typeof date !== "number") return null;
+
       return new Intl.DateTimeFormat("en-GB").format(date);
     },
     markerClickHandler(index) {
