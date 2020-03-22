@@ -216,12 +216,19 @@ export default {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 400px;
+    width: 100%;
+    z-index: 1000;
+    background-color: $color-white;
+
+    @include media-query-sm-up {
+      width: 400px;
+    }
   }
 }
 
 .map-popup {
   $root: &;
+  overflow: auto;
 
   &__close {
     position: absolute;
@@ -277,7 +284,7 @@ export default {
   }
 
   &__description {
-    padding: 40px;
+    padding: 40px 40px 120px 40px;
     line-height: 1.4;
     font-size: 14px;
   }
