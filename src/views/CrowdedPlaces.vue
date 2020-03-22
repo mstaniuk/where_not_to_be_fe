@@ -40,7 +40,7 @@
           'places__actions-bar--visible': actionsBarVisible
         }"
       >
-        <VueRangeSlider v-model="poiDensityFilterValue" />
+        <input type="range" v-model="poiDensityFilterValue">
       </div>
     </div>
 
@@ -55,11 +55,10 @@ import Map from "@/components/Map.vue";
 import PageHead from "@/components/PageHead.vue";
 import FiltersButton from "@/components/Controls/FiltersButton.vue";
 import L from "leaflet";
-import VueRangeSlider from "vue-range-component";
 
 export default {
   name: "Home",
-  components: { Map, PageHead, FiltersButton, VueRangeSlider },
+  components: { Map, PageHead, FiltersButton },
   data() {
     return {
       actionsBarVisible: false,

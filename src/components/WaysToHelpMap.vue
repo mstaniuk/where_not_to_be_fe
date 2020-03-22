@@ -145,6 +145,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      this.$refs.map.mapObject.scrollWheelZoom.disable();
       this.$refs.map.mapObject.on("moveend", ev => {
         this.$emit("moved", ev);
       });

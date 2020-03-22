@@ -1,6 +1,6 @@
 <template>
   <div class="map">
-    <LMap ref="map" :zoom="zoom" :center="currentPosition">
+    <LMap ref="map" :zoom="zoom" :center="currentPosition" >
       <l-tile-layer :url="url" :attribution="attribution" />
       <l-circle-marker
         v-for="point in poi"
@@ -71,6 +71,7 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
+      this.$refs.map.mapObject.scrollWheelZoom.disable();
       this.$refs.map.mapObject.on("moveend", ev => {
         this.$emit("moved", ev);
       });

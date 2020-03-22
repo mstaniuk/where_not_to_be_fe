@@ -68,6 +68,7 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
+      this.$refs.map.mapObject.scrollWheelZoom.disable();
       this.$refs.map.mapObject.on("move", () => {
         this.position = this.$refs.map.mapObject.getCenter();
       });
