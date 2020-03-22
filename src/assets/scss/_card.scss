@@ -8,7 +8,7 @@
   
   &__header {
     margin: -20px -20px 20px;
-    padding: 20px 20px 15px;
+    padding: 15px 20px 10px;
     color: $color-navy;
     border-bottom: 1px solid $color-lightgrey;
     font-size: 18px;
@@ -22,14 +22,32 @@
     }
 
     &--navy {
-      border-top: bottom;
+      border-top: 0;
       background-color: $color-navy;
       color: $color-white;
     }
 
     &--blue {
-      border-top: bottom;
+      border-top: 0;
       background-color: $color-lightblue;
+      color: $color-white;
+    }
+
+    &--green {
+      border-top: 0;
+      background-color: $color-green;
+      color: $color-white;
+    }
+
+    &--yellow {
+      border-top: 0;
+      background-color: $color-yellow;
+      color: $color-white;
+    }
+
+    &--salmon {
+      border-top: 0;
+      background-color: $color-salmon;
       color: $color-white;
     }
   }

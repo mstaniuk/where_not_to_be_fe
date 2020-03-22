@@ -29,7 +29,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'single'
+      default: "single"
     }
   },
 
@@ -72,7 +72,7 @@ export default {
         this.position = this.$refs.map.mapObject.getCenter();
       });
       this.$refs.map.mapObject.on("moveend", () => {
-        this.$emit('change', this.$refs.map.mapObject.getCenter());
+        this.$emit("change", this.$refs.map.mapObject.getCenter());
       });
     });
   }

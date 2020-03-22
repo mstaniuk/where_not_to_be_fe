@@ -19,7 +19,7 @@
     </div>
 
     <span
-      v-if="isMobile"
+      v-if="isMobile && $slots.text"
       :class="{
         'page-head__expander': true,
         'page-head__expander--inversed': collapsed
