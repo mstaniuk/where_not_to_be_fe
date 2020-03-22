@@ -28,6 +28,13 @@
           </div>
         </div>
 
+        <div v-if="activePoint.time.from && activePoint.time.to">
+          <div class="map-popup__target-label">Preferred time</div>
+          <div class="map-popup__target">
+            {{timeFormatter(activePoint.time.from)}} - {{timeFormatter(activePoint.time.to)}}
+          </div>
+        </div>
+
         <div class="map-popup__cta">
           <button
             class="btn btn--filled"
@@ -127,9 +134,13 @@ export default {
     },
     activePoint() {
       return this.points[this.activePointIndex]
-    }
+    },
   },
   methods: {
+    timeFormatter(date) {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      return new Intl.DateTimeFormat('en-GB').format(date)
+    },
     markerClickHandler(index) {
       if(this.activePointIndex === index) {
         this.activePointIndex = null;
@@ -245,6 +256,10 @@ export default {
 
   &__target {
     font-weight: bold;
+  }
+
+  &__cta {
+    margin-left: 10px;
   }
 
   &__description {

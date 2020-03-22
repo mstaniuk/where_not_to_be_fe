@@ -62,13 +62,18 @@ export default {
     },
     async handleApi() {
       const response = await this.$api.helpRequestsByMapCenter(this.position);
+      console.log(response);
       const newPoints = response.data.map(r => ({
         type: r.request_type,
         unit: r.unit,
         title: r.title,
         target: r.target,
         description: r.description,
-        latLng: L.latLng(r.lat, r.lng)
+        latLng: L.latLng(r.lat, r.lng),
+        time: {
+          from: r.time_from ? new Date(r.time_from) : null,
+          to: r.time_to ? new Date(r.time_to) : null,
+        }
       }));
 
       this.points = [
