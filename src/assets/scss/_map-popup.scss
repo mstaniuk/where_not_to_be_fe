@@ -1,0 +1,63 @@
+.map-popup {
+  $root: &;
+  overflow: auto;
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  &__header {
+    padding: 40px 40px 20px 40px;
+    color: $color-navy;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  &__address {
+    font-size: 14px;
+  }
+
+  &__actions {
+    padding: 10px 40px;
+    background-color: $color-salmon;
+    color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #{$root}--single & {
+      background-color: $color-lightblue;
+    }
+  }
+
+  &__target-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  &__target {
+    font-weight: bold;
+  }
+
+  &__cta {
+    margin-left: 10px;
+  }
+
+  &__description {
+    padding: 40px 40px 120px 40px;
+    line-height: 1.4;
+    font-size: 14px;
+  }
+}

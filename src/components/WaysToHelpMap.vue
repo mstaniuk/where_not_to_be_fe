@@ -11,64 +11,27 @@
       />
     </LMap>
 
-    <section
+    <ActionsDetails
       v-if="activePointIndex !== null"
-      class="map__popup map-popup"
-      :class="'map-popup--' + activePoint.type"
-    >
-      <button class="map-popup__close" @click="resetActivePoint">
-        <i class="icon icon-close" />
-      </button>
-      <header class="map-popup__header">
-        <h3 class="map-popup__title brygada">{{ activePoint.title }}</h3>
-        <div class="map-popup__address">Krakow, ul ...</div>
-      </header>
-
-      <div class="map-popup__actions">
-        <div v-if="activePoint.target">
-          <div class="map-popup__target-label">Target</div>
-          <div class="map-popup__target">
-            {{ activePoint.target }} {{ activePoint.unit }}
-          </div>
-        </div>
-
-        <div v-if="activePoint.time.from && activePoint.time.to">
-          <div class="map-popup__target-label">Preferred time</div>
-          <div class="map-popup__target">
-            {{ timeFormatter(activePoint.time.from) }} -
-            {{ timeFormatter(activePoint.time.to) }}
-          </div>
-        </div>
-
-        <div class="map-popup__cta">
-          <button
-            class="btn btn--filled"
-            :class="{
-              'btn--red': activePoint.type === 'crowd',
-              'btn--navy': activePoint.type === 'single'
-            }"
-          >
-            Help
-          </button>
-        </div>
-      </div>
-
-      <div class="map-popup__description">
-        {{ activePoint.description }}
-      </div>
-    </section>
+      class="map__popup"
+      @closeClick="resetActivePoint"
+      :point="activePoint"
+    />
   </div>
 </template>
 
 <script>
 import L from "leaflet";
 import { LMap, LMarker, LTileLayer } from "vue2-leaflet";
+import { ICON_RED_ACTIVE, ICON_BLUE, ICON_BLUE_ACTIVE, ICON_RED } from '@/utils/icons';
+import ActionsDetails from '@/components/ActionDetails.vue';
 
 export default {
   components: {
     LMap,
     LTileLayer,
-    LMarker
+    LMarker,
+    ActionsDetails
   },
 
   props: {
@@ -86,46 +49,10 @@ export default {
     return {
       activePointIndex: null,
       icons: {
-        red: L.icon({
-          iconUrl: require("@/assets/images/pin-red.png"),
-          shadowUrl: null,
-
-          iconSize: [64, 64], // size of the icon
-          shadowSize: [0, 0], // size of the shadow
-          iconAnchor: [32, 64], // point of the icon which will correspond to marker's location
-          shadowAnchor: [0, 0], // the same for the shadow
-          popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
-        }),
-        activeRed: L.icon({
-          iconUrl: require("@/assets/images/pin-red-selected.png"),
-          shadowUrl: null,
-
-          iconSize: [64, 64], // size of the icon
-          shadowSize: [0, 0], // size of the shadow
-          iconAnchor: [32, 64], // point of the icon which will correspond to marker's location
-          shadowAnchor: [0, 0], // the same for the shadow
-          popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
-        }),
-        blue: L.icon({
-          iconUrl: require("@/assets/images/pin-blue.png"),
-          shadowUrl: null,
-
-          iconSize: [64, 64], // size of the icon
-          shadowSize: [0, 0], // size of the shadow
-          iconAnchor: [32, 64], // point of the icon which will correspond to marker's location
-          shadowAnchor: [0, 0], // the same for the shadow
-          popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
-        }),
-        activeBlue: L.icon({
-          iconUrl: require("@/assets/images/pin-blue-selected.png"),
-          shadowUrl: null,
-
-          iconSize: [64, 64], // size of the icon
-          shadowSize: [0, 0], // size of the shadow
-          iconAnchor: [32, 64], // point of the icon which will correspond to marker's location
-          shadowAnchor: [0, 0], // the same for the shadow
-          popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
-        })
+        red: ICON_RED,
+        activeRed: ICON_RED_ACTIVE,
+        blue: ICON_BLUE,
+        activeBlue: ICON_BLUE_ACTIVE,
       },
       zoom: 18,
       url:
@@ -152,17 +79,6 @@ export default {
     });
   },
   methods: {
-    timeFormatter(date) {
-      const options = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-      };
-      if (!date instanceof Date || typeof date !== "number") return null;
-
-      return new Intl.DateTimeFormat("en-GB").format(date);
-    },
     markerClickHandler(index) {
       if (this.activePointIndex === index) {
         this.activePointIndex = null;
@@ -223,70 +139,6 @@ export default {
     @include media-query-sm-up {
       width: 400px;
     }
-  }
-}
-
-.map-popup {
-  $root: &;
-  overflow: auto;
-
-  &__close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 32px;
-    border: none;
-    padding: 0;
-    border-radius: 0;
-    background-color: transparent;
-  }
-
-  &__header {
-    padding: 40px 40px 20px 40px;
-    color: $color-navy;
-  }
-
-  &__title {
-    font-size: 26px;
-    font-weight: bold;
-  }
-
-  &__address {
-    font-size: 14px;
-  }
-
-  &__actions {
-    padding: 10px 40px;
-    background-color: $color-salmon;
-    color: $color-white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    #{$root}--single & {
-      background-color: $color-lightblue;
-    }
-  }
-
-  &__target-label {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-
-  &__target {
-    font-weight: bold;
-  }
-
-  &__cta {
-    margin-left: 10px;
-  }
-
-  &__description {
-    padding: 40px 40px 120px 40px;
-    line-height: 1.4;
-    font-size: 14px;
   }
 }
 </style>
