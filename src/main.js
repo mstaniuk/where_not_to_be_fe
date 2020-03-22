@@ -1,7 +1,7 @@
 import Vue from "vue";
-import { Icon } from "leaflet";
 import VueApexCharts from "vue-apexcharts";
 import { directive as vClickOutside } from "vue-clickaway";
+import Leaflet from "leaflet";
 
 import App from "@/App.vue";
 import router from "@/router";
@@ -14,8 +14,8 @@ import viewportMixin from "@/utils/viewportMixin";
 import Card from "@/components/Card";
 
 // Leaflet configuration
-delete Icon.Default.prototype._getIconUrl;
-Icon.Default.mergeOptions({
+delete Leaflet.Icon.Default.prototype._getIconUrl;
+Leaflet.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
   iconUrl: require("leaflet/dist/images/marker-icon.png"),
   shadowUrl: require("leaflet/dist/images/marker-shadow.png")
@@ -26,6 +26,7 @@ const apiService = apiServiceFactory(httpClientFactory(), {
   baseUrl: "https://avoidly-api.herokuapp.com"
 });
 Vue.prototype.$api = apiService;
+Vue.prototype.$leaflet = Leaflet;
 
 // Global mixins
 Vue.mixin(viewportMixin);

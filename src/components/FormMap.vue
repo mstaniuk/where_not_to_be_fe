@@ -15,15 +15,15 @@
 </template>
 
 <script>
-import L from "leaflet";
-import { LMap, LMarker, LTileLayer, LPopup } from "vue2-leaflet";
+// import L from "leaflet";
+// import { LMap, LMarker, LTileLayer, LPopup } from "vue2-leaflet";
 
 export default {
   components: {
-    LMap,
-    LTileLayer,
-    LMarker,
-    LPopup
+    // LMap,
+    // LTileLayer,
+    // LMarker,
+    // LPopup
   },
 
   props: {
@@ -67,14 +67,14 @@ export default {
   },
 
   mounted() {
-    this.$nextTick(() => {
-      this.$refs.map.mapObject.on("move", () => {
-        this.position = this.$refs.map.mapObject.getCenter();
-      });
-      this.$refs.map.mapObject.on("moveend", () => {
-        this.$emit("change", this.$refs.map.mapObject.getCenter());
-      });
-    });
+    // this.$nextTick(() => {
+    //   this.$refs.map.mapObject.on("move", () => {
+    //     this.position = this.$refs.map.mapObject.getCenter();
+    //   });
+    //   this.$refs.map.mapObject.on("moveend", () => {
+    //     this.$emit("change", this.$refs.map.mapObject.getCenter());
+    //   });
+    // });
   }
 };
 </script>

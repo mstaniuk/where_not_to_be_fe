@@ -14,7 +14,7 @@ export default {
     },
 
     isMobileBrowser() {
-      return !!L.Browser.mobile;
+      return !!this.$leaflet.Browser.mobile;
     }
   },
 

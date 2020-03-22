@@ -62,13 +62,13 @@
 
 <script>
 import L from "leaflet";
-import { LMap, LMarker, LTileLayer } from "vue2-leaflet";
+// import { LMap, LMarker, LTileLayer } from "vue2-leaflet";
 
 export default {
   components: {
-    LMap,
-    LTileLayer,
-    LMarker
+    // LMap,
+    // LTileLayer,
+    // LMarker
   },
 
   props: {
@@ -86,7 +86,7 @@ export default {
     return {
       activePointIndex: null,
       icons: {
-        red: L.icon({
+        red: this.$leaflet.icon({
           iconUrl: require("@/assets/images/pin-red.png"),
           shadowUrl: null,
 
@@ -96,7 +96,7 @@ export default {
           shadowAnchor: [0, 0], // the same for the shadow
           popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
         }),
-        activeRed: L.icon({
+        activeRed: this.$leaflet.icon({
           iconUrl: require("@/assets/images/pin-red-selected.png"),
           shadowUrl: null,
 
@@ -106,7 +106,7 @@ export default {
           shadowAnchor: [0, 0], // the same for the shadow
           popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
         }),
-        blue: L.icon({
+        blue: this.$leaflet.icon({
           iconUrl: require("@/assets/images/pin-blue.png"),
           shadowUrl: null,
 
@@ -116,7 +116,7 @@ export default {
           shadowAnchor: [0, 0], // the same for the shadow
           popupAnchor: [0, -16] // point from which the popup should open relative to the iconAnchor
         }),
-        activeBlue: L.icon({
+        activeBlue: this.$leaflet.icon({
           iconUrl: require("@/assets/images/pin-blue-selected.png"),
           shadowUrl: null,
 
@@ -129,7 +129,7 @@ export default {
       },
       zoom: 18,
       url:
-        "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+        "https://cartodb-basemaps-{s}.globathis.$leaflet.ssthis.$leaflet.fastly.net/light_all/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     };
@@ -137,18 +137,18 @@ export default {
 
   computed: {
     currentPosition() {
-      return L.latLng(this.position.lat, this.position.lng);
+      return this.$leaflet.latLng(this.position.lat, this.position.lng);
     },
     activePoint() {
       return this.points[this.activePointIndex];
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      this.$refs.map.mapObject.on("moveend", ev => {
-        this.$emit("moved", ev);
-      });
-    });
+    // this.$nextTick(() => {
+    //   this.$refs.map.mapObject.on("moveend", ev => {
+    //     this.$emit("moved", ev);
+    //   });
+    // });
   },
   methods: {
     timeFormatter(date) {
@@ -160,7 +160,7 @@ export default {
       };
       if (!date instanceof Date || typeof date !== "number") return null;
 
-      return new Intl.DateTimeFormat("en-GB").format(date);
+      return new Intthis.$leaflet.DateTimeFormat("en-GB").format(date);
     },
     markerClickHandler(index) {
       if (this.activePointIndex === index) {
