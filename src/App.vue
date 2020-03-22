@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="app">
+  <div id="app" class="app" data-app="Avoidly">
     <template v-if="$route.path === '/login'">
       <router-view />
     </template>

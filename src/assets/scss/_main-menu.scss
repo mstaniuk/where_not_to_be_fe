@@ -13,7 +13,7 @@
   border-radius: 10px;
   background-color: $color-white;
   width: 260px;
-  padding: 0 12px 8px;
+  padding: 0 12px 15px;
   z-index: 2000;
   @include dark-shadow;
 
@@ -59,8 +59,9 @@
   &__active-indicator {
     @include circle-shaped(24px);
     position: absolute;
-    bottom: 0;
+    top: 80%;
     left: 50%;
+    z-index: -1;
     transform: translate(-50%, 50%);
     background-color: $color-red;
     @include indicatorAnimation(firstCircle, .3s);
@@ -89,7 +90,7 @@
 
   @include media-query-lg-up {
     width: 540px;
-    padding: 0 15px 10px;
+    padding: 0 15px 30px;
   
     &__item {
       height: 70px;
@@ -114,34 +115,7 @@
     }
   
     &__active-indicator {
-      @include circle-shaped(24px);
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      background-color: $color-red;
-      @include indicatorAnimation(firstCircle, .3s);
-  
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-        background-color: rgba($color-red, .2);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-  
-      &::before {
-        @include circle-shaped(44px);
-        @include indicatorAnimation(secondCircle, .32s);
-      }
-  
-      &::after {
-        @include circle-shaped(64px);
-        @include indicatorAnimation(thirdCircle, .34s);
-      }
+      top: 100%;
     }
   }
 }

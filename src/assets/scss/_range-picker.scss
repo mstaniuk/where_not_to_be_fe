@@ -1,0 +1,74 @@
+.range-picker {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+
+  &__slider {
+    width: 100%;
+    display: flex;
+  }
+
+  &__input {
+    display: block;
+    margin-top: 0 !important;
+    padding: 0 5px !important;
+    max-width: 48px;
+    height: 28px;
+    background-color: $color-white;
+    box-shadow: inset 0 0 0 1px $color-grey;
+    border-radius: 14px;
+
+    &--from {
+      margin-right: 10px;
+    }
+        
+    &--to {
+      margin-left: 10px;
+    }
+
+    input {
+      @include label-text-styles;
+      text-align: center;
+      line-height: 28px;
+      font-weight: bold;
+      height: 28px;
+    }
+  }
+
+  .v-input__prepend-outer,
+  .v-input__append-outer {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .v-input__slot::after,
+  .v-input__slot::before {
+    display: none;
+  }
+
+  .v-slider__thumb {
+    @include circle-shaped(20px);
+    background-color: $color-white !important;
+    @include dark-shadow;
+    cursor: pointer;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .v-slider__track-container {
+    height: 4px !important;
+
+    .v-slider__track-background {
+      background-color: $color-lightblue !important;
+      border-radius: 2px;
+    }
+
+    .v-slider__track-fill {
+      background-color: $color-navy !important;
+      border-radius: 2px;
+    }
+  }
+}
