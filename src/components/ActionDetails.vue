@@ -28,7 +28,7 @@
 
       <div class="map-popup__cta">
         <button
-          class="btn btn--filled"
+          class="btn btn--filled btn--small"
           :class="{
               'btn--red': point.type === 'crowd',
               'btn--navy': point.type === 'single'

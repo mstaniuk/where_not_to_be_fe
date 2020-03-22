@@ -70,8 +70,8 @@ export default {
         description: r.description,
         latLng: L.latLng(r.lat, r.lng),
         time: {
-          from: r.time_from ? new Date(r.time_from) : null,
-          to: r.time_to ? new Date(r.time_to) : null
+          from: r.time_from,
+          to: r.time_to
         }
       }));
 
