@@ -21,8 +21,8 @@
       <div v-if="point.time.from && point.time.to">
         <div class="map-popup__target-label">Preferred time</div>
         <div class="map-popup__target">
-          <span class="nowrap">{{ point.time.from | date }}</span> -
-          <span class="nowrap">{{ point.time.to | date }}</span>
+          <span class="nowrap">{{ point.time.from | compactDate }}</span> -
+          <span class="nowrap">{{ point.time.to | compactDate }}</span>
         </div>
       </div>
 

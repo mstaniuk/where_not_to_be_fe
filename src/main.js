@@ -54,10 +54,33 @@ Vue.filter("date", value => {
 
     const date = `${year}-${addZero(month)}-${addZero(day)}`;
 
-    return `${date} ${hours}:${minutes}`;
+    return `${date} ${addZero(hours)}:${addZero(minutes)}`;
   }
 
   return value;
+});
+
+Vue.filter("compactDate", value => {
+  let val = value;
+  try {
+    if (!(val instanceof Date)) {
+      val = new Date(val);
+    }
+
+    const year = val.getFullYear();
+    const month = val.getMonth();
+    const day = val.getDate();
+    const hours = val.getHours();
+    const minutes = val.getMinutes();
+
+    const addZero = v => (v < 10 ? `0${v}` : v);
+    const date = `${addZero(day)}/${addZero(month)}/${year.toString().substring(2)}`;
+
+    return `${date} ${hours}:${addZero(minutes)}`;
+  } catch (e) {
+    console.log(e);
+    return value;
+  }
 });
 
 Vue.config.productionTip = false;
