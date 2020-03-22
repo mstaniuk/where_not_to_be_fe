@@ -105,7 +105,7 @@ export default {
         },
         { path: "/statistics", label: "Statistics" },
         { path: "/settings", label: "Settings" },
-        { path: "/logout", label: "Logout" }
+        { path: "/login", label: "Logout" }
       ],
       adScore: 10284
     };
