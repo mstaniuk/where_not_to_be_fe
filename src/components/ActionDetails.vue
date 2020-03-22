@@ -21,8 +21,8 @@
       <div v-if="point.time.from && point.time.to">
         <div class="map-popup__target-label">Preferred time</div>
         <div class="map-popup__target">
-          {{ timeFormatter(point.time.from) }} -
-          {{ timeFormatter(point.time.to) }}
+          <span class="nowrap">{{ point.time.from | date }}</span> -
+          <span class="nowrap">{{ point.time.to | date }}</span>
         </div>
       </div>
 
@@ -55,12 +55,5 @@ export default {
       required: true,
     }
   },
-
-  methods: {
-    timeFormatter(date) {
-      if (!date instanceof Date && typeof date !== "number") return null;
-      return new Intl.DateTimeFormat("en-GB").format(date);
-    },
-  }
 }
 </script>
