@@ -2,6 +2,8 @@
 
 This project has been started while the world was in danger of coronavirus infection.
 
+### [Online demo on Heroku](https://avoidly-ui.herokuapp.com)
+
 ### Download dependencies before starting development
 ```
 npm install
@@ -37,6 +39,7 @@ The __Avoidly__ app was done during [__Hack The Crisis__](https://www.hackcrisis
 
 
 ### Screenshots:
+![Mobile UI](https://imgur.com/X0n1WgJ.png)
 
 ![Login page](https://imgur.com/sofpGwo.png)
 
