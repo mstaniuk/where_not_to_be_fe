@@ -12,6 +12,9 @@ import apiServiceFactory from "@/utils/apiServiceFactory";
 import viewportMixin from "@/utils/viewportMixin";
 
 import Card from "@/components/Card";
+import vuetify from "./plugins/vuetify";
+import "roboto-fontface/css/roboto/roboto-fontface.css";
+import "@mdi/font/css/materialdesignicons.css";
 
 // Leaflet configuration
 delete Icon.Default.prototype._getIconUrl;
@@ -61,5 +64,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
+  vuetify,
   render: h => h(App)
 }).$mount("#app");

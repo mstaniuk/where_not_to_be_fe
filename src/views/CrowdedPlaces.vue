@@ -40,7 +40,7 @@
           'places__actions-bar--visible': actionsBarVisible
         }"
       >
-        <input type="range" v-model="poiDensityFilterValue">
+        <RangePicker v-model="densityRange" :max="25" />
       </div>
     </div>
 
@@ -55,10 +55,11 @@ import Map from "@/components/Map.vue";
 import PageHead from "@/components/PageHead.vue";
 import FiltersButton from "@/components/Controls/FiltersButton.vue";
 import L from "leaflet";
+import RangePicker from "@/components/Controls/RangePicker.vue";
 
 export default {
   name: "Home",
-  components: { Map, PageHead, FiltersButton },
+  components: { Map, PageHead, RangePicker, FiltersButton },
   data() {
     return {
       actionsBarVisible: false,
@@ -67,12 +68,15 @@ export default {
         lng: 19.947022
       },
       poi: [],
-      poiDensityFilterValue: 0
+      densityRange: [0, 10]
     };
   },
   computed: {
     filteredPoi() {
-      return this.poi.filter(p => p.density >= this.poiDensityFilterValue);
+      return this.poi.filter(
+        p =>
+          p.density >= this.densityRange[0] && p.density <= this.densityRange[1]
+      );
     }
   },
   watch: {

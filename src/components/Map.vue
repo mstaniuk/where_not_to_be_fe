@@ -1,6 +1,6 @@
 <template>
   <div class="map">
-    <LMap ref="map" :zoom="zoom" :center="currentPosition" >
+    <LMap ref="map" :zoom="zoom" :center="currentPosition">
       <l-tile-layer :url="url" :attribution="attribution" />
       <l-circle-marker
         v-for="point in poi"
