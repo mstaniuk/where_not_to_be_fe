@@ -17,7 +17,7 @@
   top: $topbar-height;
   width: $sidebar-width;
   transform: translateX(-$sidebar-width);
-  z-index: 2000;
+  z-index: 2020;
   animation-name: hidemenu;
   animation-duration: .5s;
   animation-timing-function: ease-out;
