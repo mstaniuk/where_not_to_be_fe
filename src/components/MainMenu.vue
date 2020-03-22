@@ -9,14 +9,14 @@
           'main-menu__item--active': activeLink.path === item.path
         }"
       >
-        <router-link :to="{ path: item.path }">
-          <i :class="`icon icon-${item.icon}`" />
-          <span v-if="!isMobile">{{ item.label }}</span>
-        </router-link>
         <i
           v-if="activeLink.path === item.path"
           class="main-menu__active-indicator"
         />
+        <router-link :to="{ path: item.path }">
+          <i :class="`icon icon-${item.icon}`" />
+          <span v-if="!isMobile">{{ item.label }}</span>
+        </router-link>
       </li>
     </ul>
   </nav>
