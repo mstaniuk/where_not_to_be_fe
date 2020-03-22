@@ -65,6 +65,9 @@ Vue.filter("compactDate", value => {
   try {
     if (!(val instanceof Date)) {
       val = new Date(val);
+      if(isNaN(val.getTime())) {
+        throw new Error('invalid date');
+      }
     }
 
     const year = val.getFullYear();
@@ -78,7 +81,6 @@ Vue.filter("compactDate", value => {
 
     return `${date} ${hours}:${addZero(minutes)}`;
   } catch (e) {
-    console.log(e);
     return value;
   }
 });
