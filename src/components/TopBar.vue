@@ -4,7 +4,9 @@
       <slot />
     </div>
     <div class="top-bar__center">
-      <img :src="AppLogo" alt="Avoidly application logo" />
+      <router-link :to="{ path: '/' }">
+        <img :src="AppLogo" alt="Avoidly application logo" />
+      </router-link>
     </div>
     <div class="top-bar__right" />
   </div>
