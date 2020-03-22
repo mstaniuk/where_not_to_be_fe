@@ -62,13 +62,21 @@ export default {
     },
     async handleApi() {
       const response = await this.$api.helpRequestsByMapCenter(this.position);
-      this.points = response.data.map(r => ({
+      const newPoints = response.data.map(r => ({
         type: r.request_type,
         unit: r.unit,
         title: r.title,
+        target: r.target,
         description: r.description,
         latLng: L.latLng(r.lat, r.lng)
       }));
+
+      this.points = [
+        ...this.points,
+        ...newPoints.filter(
+          np => this.points.findIndex(p => np.title === p.title) < 0
+        )
+      ];
     }
   }
 };
