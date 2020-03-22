@@ -160,6 +160,7 @@ button.btn {
   bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 200;
 
   .btn {
     @include defineSize(36px);
