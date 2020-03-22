@@ -1,5 +1,5 @@
 <template>
-  <section id="crowded-places" class="page places">
+  <section id="crowded-places" class="page page-with-map places">
     <PageHead>
       <template v-slot:title>
         Crowded places

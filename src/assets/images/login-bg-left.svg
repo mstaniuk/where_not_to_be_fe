@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960px" height="1081px" viewBox="0 0 960 1081" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Backgrounds/Login2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-1">
+            <stop stop-color="#302B5C" offset="0%"></stop>
+            <stop stop-color="#CC5B54" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Backgrounds/Login2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#302B5C" x="0" y="0" width="960" height="1080"></rect>
+        <path d="M426.751595,92.6728601 C577.077194,82.150661 696.210231,130.252143 784.150706,236.977306 C910.609908,390.449058 666.990644,543.014833 721.582225,870.564013 C738.868712,974.282833 818.258502,1044.1803 959.751595,1080.25641 L426.751595,1072.36476 L426.751595,92.6728601 Z" id="Rectangle" fill="url(#linearGradient-1)" transform="translate(693.251595, 585.756410) scale(-1, 1) translate(-693.251595, -585.756410) "></path>
+    </g>
+</svg>

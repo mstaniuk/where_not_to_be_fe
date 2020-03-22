@@ -1,27 +1,33 @@
 <template>
   <div id="app" class="app">
-    <aside
-      :class="{
-        app__side: true,
-        'app__side--visible': menuExpanded
-      }"
-    >
-      <Side />
-    </aside>
-    <main class="app__main">
-      <TopBar v-if="isMobile">
-        <div
-          v-if="isMobile"
-          class="top-bar__menu-btn"
-          @click="menuExpanded = !menuExpanded"
-        >
-          <i v-if="!menuExpanded" class="icon icon-hamburger" />
-          <i v-else class="icon icon-close" />
-        </div>
-      </TopBar>
+    <template v-if="$route.path === '/login'">
       <router-view />
-    </main>
-    <MainMenu />
+    </template>
+
+    <template v-else>
+      <aside
+        :class="{
+          app__side: true,
+          'app__side--visible': menuExpanded
+        }"
+      >
+        <Side />
+      </aside>
+      <main class="app__main">
+        <TopBar v-if="isMobile">
+          <div
+            v-if="isMobile"
+            class="top-bar__menu-btn"
+            @click="menuExpanded = !menuExpanded"
+          >
+            <i v-if="!menuExpanded" class="icon icon-hamburger" />
+            <i v-else class="icon icon-close" />
+          </div>
+        </TopBar>
+        <router-view />
+      </main>
+      <MainMenu />
+    </template>
   </div>
 </template>
 
