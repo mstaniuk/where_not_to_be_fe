@@ -20,7 +20,9 @@ a {
 }
 
 .page {
-  padding-bottom: 120px;
+  &:not(.page-with-map) {
+    padding-bottom: 120px;
+  }
 
   &__content {
     padding: 0 20px;
